@@ -8,7 +8,7 @@ headerImage: true
 projects: true
 hidden: false # don't count this post in blog pagination
 description: "Doge"
-jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
+jemoji: '<img class="emoji" title=":dog2:" alt=":dog2:" src="https://assets.github.com/images/icons/emoji/unicode/1f415.png" height="20" width="20" align="absmiddle">'
 author: shantanujoshi
 externalLink: false
 ---
