@@ -2,7 +2,7 @@
 title: "First Post Readme"
 layout: post
 date: 2016-07-30 18:33
-image: /assets/images/markdown.jpg
+image: 
 headerImage: false
 tag:
 - hello world is overrated
@@ -12,3 +12,6 @@ author: shantanujoshi
 description: Markdown summary with different options
 ---
 
+This is my blog, website, braindump. 
+
+I post projects here. And stuff I've built. And stuff I want to share with people because I still can't figure out twitter :unamused:

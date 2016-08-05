@@ -3,45 +3,36 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-07-30T21:22:46-04:00</updated>
+<updated>2016-08-05T17:46:34-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>A blog about technology and stuff related</subtitle>
 <entry>
 <title>First Post Readme</title>
-<link href="http://localhost:3000/markdown-extra-components/" rel="alternate" type="text/html" title="First Post Readme" />
+<link href="http://localhost:3000/first-post-readme/" rel="alternate" type="text/html" title="First Post Readme" />
 <published>2016-07-30T18:33:00-04:00</published>
 <updated>2016-07-30T18:33:00-04:00</updated>
-<id>http://localhost:3000/markdown-extra-components</id>
-<content type="html" xml:base="http://localhost:3000/markdown-extra-components/">
+<id>http://localhost:3000/first-post-readme</id>
+<content type="html" xml:base="http://localhost:3000/first-post-readme/">&lt;p&gt;This is my blog, website, braindump.&lt;/p&gt;
+
+&lt;p&gt;I post projects here. And stuff I’ve built. And stuff I want to share with people because I still can’t figure out twitter &lt;img class=&quot;emoji&quot; title=&quot;:unamused:&quot; alt=&quot;:unamused:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f612.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 </content>
 <author>
 <name>shantanujoshi</name>
 </author>
 <category term="hello world is overrated" />
+<summary>This is my blog, website, braindump.</summary>
 </entry>
 <entry>
-<title>Markdown Common Elements</title>
-<link href="http://localhost:3000/markdown-common-elements/" rel="alternate" type="text/html" title="Markdown Common Elements" />
-<published>2016-02-24T22:44:00-05:00</published>
-<updated>2016-02-24T22:44:00-05:00</updated>
-<id>http://localhost:3000/markdown-common-elements</id>
-<content type="html" xml:base="http://localhost:3000/markdown-common-elements/"></content>
-<category term="markdown" />
-<category term="elements" />
-</entry>
-<entry>
-<title>This is where projects go…</title>
-<link href="http://localhost:3000/indigo-jekyll-theme/" rel="alternate" type="text/html" title="This is where projects go..." />
+<title>Doge</title>
+<link href="http://localhost:3000/doge/" rel="alternate" type="text/html" title="Doge" />
 <published>2016-01-23T22:10:00-05:00</published>
 <updated>2016-01-23T22:10:00-05:00</updated>
-<id>http://localhost:3000/indigo-jekyll-theme</id>
-<content type="html" xml:base="http://localhost:3000/indigo-jekyll-theme/">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/sx44AEd.jpg&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
+<id>http://localhost:3000/doge</id>
+<content type="html" xml:base="http://localhost:3000/doge/">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/sx44AEd.jpg&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
 </content>
 <author>
-<name>johndoe</name>
+<name>shantanujoshi</name>
 </author>
 <category term="doge" />
 <summary></summary>
