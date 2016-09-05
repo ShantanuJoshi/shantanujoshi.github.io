@@ -1,0 +1,91 @@
+---
+title: "Benchmarking the Sieve of Eratosthenes"
+layout: post
+date: 2016-09-04 05:21
+tag: cs projects
+image: 
+headerImage: true
+projects: true
+hidden: false # don't count this post in blog pagination
+description: "Sieve or Eratosthenes"
+jemoji: 
+author: shantanujoshi
+externalLink: false
+---
+
+The Sieve of Eratosthenes is a peculiar, ancient, and intuitive algorithm that generates prime numbers. This post is about my weird obsession with a dumb, probably inefficient algorithm, and my attempt to parallelize it and actually put to use graphics cards I normally just play Grand Theft Auto 5 on.  
+<hr />
+
+<h2 id="heading2">Prime Numbers</h2>
+
+Prime numbers are interesting and tons of smart people are doing really compelling research on them. <em>This is definitely not that.</em> So here's an elementary explanation of primes  and the <span style="color:#1abc9c">SOE</span> (yes I’m abbreviating Sieve of Eratosthenes to save 21 characters you're welcome). 
+
+ 
+
+ 
+
+<h2 id="heading2">Naive Algorithm</h2>
+Testing for a prime number is tricky; here's a simple slow method to start with: 
+
+<pre><strong>Given the number x if any prime integer from 2 to sqaureroot(X) evenly divides n it's NOT prime.</strong></pre>
+
+This is reallllly slow. If your number is massive this method gets even worse. Regardless it's probably a great intro to programming homework problem (hint hint CS101 profs) but in the business of primes we'd need something faster. Enter <span style="color:#1abc9c">SOE</span>... 
+
+ 
+
+<h2 id="heading2">The Sieve</h2> 
+
+I was actually taught the sieve in a course preparing students for programming competitions where we were learning methods of Prime number generation. My love for prime numbers is non-existent, but for some odd reason I found this singular algorithm infuriatingly beautiful. Sure, it doesn't have the overwhelming existential impacts of max flows and single shortest paths but something about the simple and intuitive nature of the <span style="color:#1abc9c">SOE</span>  differentiated it from the likes of every other algorithm in this class. I found myself revisiting the algorithm two weeks later in a parallel computing course attempting to translate my java to c code and running it through OpenMP for a lab.  
+
+<hr />
+
+<h2 id="heading3">The Acutal Algorithm</h2> 
+
+The goal is to create a list of prime numbers that we can reference at constant time, ideally we can generate this list more quickly than the naïve approach 
+
+Here's the algorithm: 
+
+<ol>
+<li>Generate a list of integers from 2 to some limit (for our purposes let's use 21)</li>
+<pre><strong>2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21</strong></pre>
+<li>Since the first number of this list is 2, cross out every <em>2nd</em> number on the list after 2</li>
+<pre><strong>2 3 <del>4</del> 5 <del>6</del> 7 <del>8</del> 9 <del>10</del> 11 <del>12</del> 13 <del>14</del> 15 <del>16</del> 17 <del>18</del> 19 <del>20</del> 21 </strong></pre>
+<li>The next number is 3 so same idea, cross out ever <em>3rd</em> number on the list after 3</li>
+<pre><strong>2 3 <del>4</del> 5 <del>6</del> 7 <del>8</del> <del>9</del> <del>10</del> 11 <del>12</del> 13 <del>14</del> <del>15</del> <del>16</del> 17 <del>18</del> 19 <del>20</del> <del>21</del></strong></pre>
+<li>5 is the next number, however no multiples of 5 remain to be crossed out</li>
+<li>We continue until there are no more numbers left to count off of and there's your list of primes (which is right now) and what we are left with is our list of primes</li>
+<pre><strong>2 3 5 7 11 13 17 19</strong></pre>
+</ol> 
+
+<h2 id="heading3"> Simple right?</h2>
+
+<strong><span style="color:#EB298C">YES!</span></strong> I think that's the beauty of it. I'd like to take this simple concept and see how far I can attempt to speed it up and benchmark it.
+ 
+
+Watch this GIF that illustrates the algorithm perfectly (thanks Wikipedia) reload the page if it's finished (gonna add click to play later)
+
+<p><img alt="Sieve of Eratosthenes animation" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Sieve_of_Eratosthenes_animation.svg"/></p>
+
+And that's the <span style="color:#1abc9c">SOE</span>. Okay so it's definitely not the fastest way to generate primes probably not the most efficient way to write an isPrime method either. <em>But it's SO easy to explain and understand.</em> Learning this method reminded me of my first time learning about summing up numbers with for-loops in an intro Java class in high school where I felt this sense of achievement, confidence, and comfort with programming that was completely lost after my first college lab assignment in C. The <span style="color:#1abc9c">SOE</span> just clicks in a way not many <em>"advanced"</em> concepts do in CS. 
+
+<hr/>
+<h2 id="heading3"> Stuff below is all draft still so don't read it </h2>
+Here's the sieve in Java: 
+
+ 
+
+Here's the implementation in C: 
+
+ 
+
+Parallelization? Is this a word? Making to parallels codes: 
+
+Parallel computing is a sexy buzzword and this is not a guide on how to parallelize things. If you're interested in learning I can point you to my amazing college professor for the course I took; his course material is all in comic sans on a jarring neon background, but his lectures were fantastic. (MAYBE ADD THE NAME) 
+
+ 
+
+This is probably not a great CUDA task: 
+
+-Running the sieve with OpenMP or MPI makes a LOT of sense. But unfortunately upon my graduation I lost my NYU-server privellages and no longer have access to multicore, distributed computing resources yayyyyy. Being an Alumni sucks they just don't love you anymore.  
+
+-Runnign the sieve on CUDA probably DOESN'T make sense. BUT I have a brand new Psacal Titan X from Nvidia and it would be a crime to leave all those CUDA cores to rendering GTA V at 4K Resolution and training baby predictive models for my fantasy football league… SO I'm going to try to find a way to break apart the algorithm and utilize CUDA to see if it speeds things up.  
