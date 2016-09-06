@@ -3,15 +3,160 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-04T20:54:00-04:00</updated>
+<updated>2016-09-06T17:19:12-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>A blog about technology and stuff related</subtitle>
 <entry>
+<title>Getting Pascal GPU’s to Work on Linux</title>
+<link href="http://localhost:3000/nvidiabuntu/" rel="alternate" type="text/html" title="Getting Pascal GPU&#39;s to Work on Linux" />
+<published>2016-09-04T21:08:00-04:00</published>
+<updated>2016-09-04T21:08:00-04:00</updated>
+<id>http://localhost:3000/nvidiabuntu</id>
+<content type="html" xml:base="http://localhost:3000/nvidiabuntu/">&lt;p&gt;I’ve been running ubuntu on computers with discrete GPU’s for a few years now. Not ONCE has it ever been easy. The problem is that the Ubuntu default Nouveau drivers require time to update compatibility, and Nvidia drivers hate working with/disabling Nouveau. Given my itch to have the latest and greatest laptop hardware for the past few years I’ve had to deal with hacking away at the kernel/nouveau and nvidia beta drivers to get linux running on my various devices. Compatibility is generally introduced in kernel updates a couple months after the release of new hardware, but ain’t nobody got time for that.&lt;/p&gt;
+
+&lt;p&gt;Around a month or so ago, after a friend at facebook gifted me an Oculus Rift; as a result I decided to build my own computer. I bought the new Nvidia GTX 1080 and a month later also purchased the new Pascal Titan X (or Titan XP, thanks linustechtips) and decided to dual boot Ubuntu 16.04 because I thought it’d be interesting to test CUDA benchmarks with the new GPU’s. I also failed to find anyone post anything about their success or even failure with trying to run the GPU’s on linux.&lt;/p&gt;
+
+&lt;p&gt;After hours of failure getting the beta linux drivers from BOTH the PPA and the official Nvidia website link to work with my install I finally found a method that I think works 100% of the time when getting Ubuntu to work with dGPUs.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt; How to get new GPU&#39;s working with Ubuntu &lt;/h2&gt;
+&lt;p&gt;Note: the following steps expect a fresh Ubuntu install. If you’re trying to trouble shoot after installing, getting this to work would require at least being able to boot to TTY which may not be garunteed for certain installs&lt;/p&gt;
+
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<category term="linux" />
+<summary>I’ve been running ubuntu on computers with discrete GPU’s for a few years now. Not ONCE has it ever been easy. The problem is that the Ubuntu default Nouveau drivers require time to update compatibility, and Nvidia drivers hate working with/disabling Nouveau. Given my itch to have the latest and greatest laptop hardware for the past few years I’ve had to deal with hacking away at the kernel/nouveau and nvidia beta drivers to get linux running on my various devices. Compatibility is generally introduced in kernel updates a couple months after the release of new hardware, but ain’t nobody got time for that.</summary>
+</entry>
+<entry>
+<title>Modding an AIO Water Cooler for the Titan XP (Pascal)</title>
+<link href="http://localhost:3000/titanxp-watercooling/" rel="alternate" type="text/html" title="Modding an AIO Water Cooler for the Titan XP (Pascal)" />
+<published>2016-09-02T18:21:00-04:00</published>
+<updated>2016-09-02T18:21:00-04:00</updated>
+<id>http://localhost:3000/titanxp-watercooling</id>
+<content type="html" xml:base="http://localhost:3000/titanxp-watercooling/">&lt;p&gt;I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible load and idle temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. &lt;em&gt;Scroll down to skip to the tutorial&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/1.JPG”
+            title=”Titan XP”
+            caption=”Titan XP” %}&lt;/p&gt;
+
+&lt;h2&gt; Why water cool? &lt;/h2&gt;
+
+&lt;p&gt;Nvidia’s default blower-style coolers are relatively inefficient, and unfortunately AIB’s (Add-in Board Partners) are not allowed to release custom cooling solutions or modify the reference PCB Nvidia creates for the Titan series.&lt;/p&gt;
+
+&lt;p&gt;As a result the only solution to better performance and temperatures is water cooling. There is a large community of PC enthusiasts that build custom water cooling loops for their systems. Unfortunately custom loops are expensive and cumbersome. In addition they tend to make upgrading quite difficult. The next solution to water cooling a graphics card is a “hybrid-kit”. Basically an all in one water cooler that attaches to the GPU PCB and creates a water cooling loop.&lt;/p&gt;
+
+&lt;p&gt;EVGA (an AIB that releases custom loops) does not have a water cooling kit for the new Titan X. The only option is to modify a water cooling kit made for the Titan X’s younger brother the GTX 1080.&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/2.JPG”
+            title=”EVGA Hybrid”
+            caption=”EVGA 1080 Hybrid Kit” %}&lt;/p&gt;
+
+&lt;h2&gt; How to Mod the EVGA 1080 Hybrid Kit for the Titan X &lt;/h2&gt;
+
+&lt;p&gt;Installing the kit with or without mods first requires complete removal of the original cooler from the graphics card.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Warning: this will void your warranty with nvidia, but if you put the original cooler back on there’s no way for them to know you’ve removed it. I’m not saying I recommend doing so but I’m also saying there are no tamper-proof screws…&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note before continuing:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep careful track of all the screws, you&#39;ll need them in the future &lt;/li&gt;
+&lt;li&gt;Try to find a dremel tool, if you don&#39;t have one it&#39;s a perfect opportunity to pick one up, I&#39;ll specify the attachment bits used in each step&lt;/li&gt;
+&lt;li&gt;If you&#39;re afraid or unsure of removing the GPU cooler from the PCB I recommend watching this video detailing the teardown of the Titan X: https://www.youtube.com/watch?v=H7HN3CDxMQk&lt;/li&gt;
+&lt;li&gt;You must ground yourself somehow while doing this. Here&#39;s a link as to why it&#39;s necessary: http://www.tomshardware.com/faq/id-2121341/ground-building-computer.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Step 1: Remove the IO Plate&lt;/h2&gt;
+
+&lt;p&gt;Start by removing the 5 screws on the IO plate, the two screws for the DVI port, and the two screws on the back plate holding the IO plate in place.&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/3.JPG”
+            title=”Titan X IO Plate”
+            caption=”Remove this IO Plate” %}&lt;/p&gt;
+
+&lt;h2&gt;Step 2: Unscrew the Cooler&lt;/h2&gt;
+
+&lt;p&gt;Get yourself two allan/hex keys/bit, a tiny phillips 00, and a larger philips head. I didn’t take pictures of the cooler removal given that there’s no real trick here. Here’s the best order of operations for the removal:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Remove the back plate by carefully unscrewing the TINY screws holding it in place (one part of the backplate slides out of the other)&lt;/li&gt;
+&lt;li&gt;Use the smaller allan key to remove all the screws surrounding the cooler, the four larger screws next to the clear window are only there to hold the window to the plate itself (see photo of larger screws)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/4.JPG”
+            title=”Titan X Cooler Screws”
+            caption=”Remove all but the optional circled screws” %}&lt;/p&gt;
+
+&lt;p&gt;Step 3: Remove the Cooler&lt;/p&gt;
+
+&lt;p&gt;Again I didn’t think this step needed documentation. The best way to do it is remove the section with the window first, you will experience some resistance from the thermal compound on the heatsink but ignore it. Next remove the second cooler, be careful of the wire connecting the fan to the PCB and remove it carefully. Once the entire cooler is removed and you’ve wiped the GPU surface with a microfiber cloth dipped in some alcohol…&lt;/p&gt;
+
+&lt;p&gt;It should look something like this:&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/5.JPG”
+            title=”Titan X PCB”
+            caption=”Nvidia GP102” %}&lt;/p&gt;
+
+&lt;h2&gt;Step 4: Modifications to the EVGA Kit&lt;/h2&gt;
+
+&lt;p&gt;The evga kit consists of 3 major parts: the AIO water cooler, a pcb plate, and a top cover. The AIO cooler fits onto the GPU perfectly as both the Titan X and the 1080 use the GP102 chip, the only issue is mounting the PCB plate with the fan onto the Titan X PCB. The plate needs to accommodate for the following features of the Titan X:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt; Extra Capacitors&lt;/li&gt;
+&lt;li&gt; S6-pin power connector &lt;/li&gt;
+&lt;li&gt; Additional Phase Chip &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/6.JPG”
+            title=”Additional PCB Items”
+            caption=”Additional Titan X Components” %}&lt;/p&gt;
+
+&lt;h2&gt;Step 5: Make Room for an Extra 6-Pin&lt;/h2&gt;
+
+&lt;p&gt;I started with this as it seemed the simplest, I used a cutting tool and eyeballed the additional cuts needed for the plate. The removed section is highlighted below:&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/7.JPG”
+            title=”Space for 8+6Pin”
+            caption=”Area Removed for 6-Pin” %}&lt;/p&gt;
+
+&lt;h2&gt;Step 6: Accomodating the Extra Phase Chip&lt;/h2&gt;
+
+&lt;p&gt;Cut out a section for the extra phase chip. This part is tricky, I started by using a cutting tool to cut out a square a bit smaller than the area I thought I needed (all eyeballed). After which I brought the plate close to the PCB to see how much more metal I would have to remove and used a grinding bit to cut away slowly at the plate.&lt;/p&gt;
+
+&lt;p&gt;Here are my results:&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/8.JPG”
+            title=”Cuts for Phase Chip”
+            caption=”Area Removed for Extra Chip” %}&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/TitanXPMod/9.JPG”
+            title=”Larger View of Cuts”
+            caption=”Wider View of the Cut for Scale” %}&lt;/p&gt;
+
+&lt;h2&gt;Step 7: Grinding a Space for the Capacitors&lt;/h2&gt;
+&lt;p&gt;(Still in progress, the rest of the tutorial will be updated later today)&lt;/p&gt;
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<category term="hardware" />
+<summary>I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible load and idle temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. Scroll down to skip to the tutorial</summary>
+</entry>
+<entry>
 <title>Benchmarking the Sieve of Eratosthenes</title>
 <link href="http://localhost:3000/soe/" rel="alternate" type="text/html" title="Benchmarking the Sieve of Eratosthenes" />
-<published>2016-09-04T05:21:00-04:00</published>
-<updated>2016-09-04T05:21:00-04:00</updated>
+<published>2016-08-19T05:21:00-04:00</published>
+<updated>2016-08-19T05:21:00-04:00</updated>
 <id>http://localhost:3000/soe</id>
 <content type="html" xml:base="http://localhost:3000/soe/">&lt;p&gt;The Sieve of Eratosthenes is a peculiar, ancient, and intuitive algorithm that generates prime numbers. This post is about my weird obsession with a dumb, probably inefficient algorithm, and my attempt to parallelize it and actually put to use graphics cards I normally just play Grand Theft Auto 5 on.&lt;/p&gt;
 &lt;hr /&gt;
@@ -81,7 +226,7 @@
 <author>
 <name>shantanujoshi</name>
 </author>
-<category term="cs projects" />
+<category term="cs" />
 <summary>The Sieve of Eratosthenes is a peculiar, ancient, and intuitive algorithm that generates prime numbers. This post is about my weird obsession with a dumb, probably inefficient algorithm, and my attempt to parallelize it and actually put to use graphics cards I normally just play Grand Theft Auto 5 on.</summary>
 </entry>
 <entry>

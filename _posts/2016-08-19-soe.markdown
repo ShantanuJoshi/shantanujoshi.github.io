@@ -1,8 +1,8 @@
 ---
 title: "Benchmarking the Sieve of Eratosthenes"
 layout: post
-date: 2016-09-04 05:21
-tag: cs projects
+date: 2016-08-19 05:21
+tag: cs
 image: 
 headerImage: true
 projects: true
