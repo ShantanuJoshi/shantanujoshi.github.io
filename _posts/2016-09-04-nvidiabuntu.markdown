@@ -22,5 +22,16 @@ After hours of failure getting the beta linux drivers from BOTH the PPA and the 
 
 <hr>
 <h2> How to get new GPU's working with Ubuntu </h2>
-Note: the following steps expect a fresh Ubuntu install. If you're trying to trouble shoot after installing, getting this to work would require at least being able to boot to TTY which may not be garunteed for certain installs
+Note: the following steps expect a fresh Ubuntu install. If you're trying to trouble shoot after installing, getting this to work would require at least being able to boot to TTY which may not be garunteed for certain installs. The basic framework is as follows:
+
+<ol>
+<li> Install ubuntu w/ the GPU unplugged or disable the PCIE for the GPU in BIOS </li>
+<li> Boot into Ubuntu, run ALL updates, get the graphics PPA, and connect to the internet</li>
+<li> Restart the computer to TTY </li>
+<li> Purge Nurge nouveau and blacklist it just incase as well</li>
+<li> Install latest nvidia release nvidia-###</li>
+<li> Reboot, if it fails go back to tty and check .Xauthority permissions</li>
+</ol>
+
+These are the basics steps with some troubleshooting inbetween (nomodeset, permissions issues, grub issues). Detailed tutorial to follow.
 
