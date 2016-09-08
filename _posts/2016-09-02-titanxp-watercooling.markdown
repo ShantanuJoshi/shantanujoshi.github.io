@@ -14,7 +14,7 @@ externalLink: false
 
  
 
-I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible load and idle temps. In this post I'll describe my steps in modding a hybrid water cooling kit that's fit for the GTX 1080 to work with the new Titan X. <em>Scroll down to skip to the tutorial</em> 
+I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible idle and load temps. In this post I'll describe my steps in modding a hybrid water cooling kit that's fit for the GTX 1080 to work with the new Titan X. <em>Scroll down to skip to the tutorial</em> 
 
 
 

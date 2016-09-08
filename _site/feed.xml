@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-06T17:19:12-04:00</updated>
+<updated>2016-09-08T12:46:30-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>A blog about technology and stuff related</subtitle>
@@ -37,7 +37,7 @@
 <published>2016-09-02T18:21:00-04:00</published>
 <updated>2016-09-02T18:21:00-04:00</updated>
 <id>http://localhost:3000/titanxp-watercooling</id>
-<content type="html" xml:base="http://localhost:3000/titanxp-watercooling/">&lt;p&gt;I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible load and idle temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. &lt;em&gt;Scroll down to skip to the tutorial&lt;/em&gt;&lt;/p&gt;
+<content type="html" xml:base="http://localhost:3000/titanxp-watercooling/">&lt;p&gt;I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible idle and load temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. &lt;em&gt;Scroll down to skip to the tutorial&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;{% include image.html
         	img=”assets/images/TitanXPMod/1.JPG”
@@ -150,7 +150,7 @@
 <name>shantanujoshi</name>
 </author>
 <category term="hardware" />
-<summary>I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible load and idle temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. Scroll down to skip to the tutorial</summary>
+<summary>I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible idle and load temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. Scroll down to skip to the tutorial</summary>
 </entry>
 <entry>
 <title>Benchmarking the Sieve of Eratosthenes</title>
@@ -158,14 +158,11 @@
 <published>2016-08-19T05:21:00-04:00</published>
 <updated>2016-08-19T05:21:00-04:00</updated>
 <id>http://localhost:3000/soe</id>
-<content type="html" xml:base="http://localhost:3000/soe/">&lt;p&gt;The Sieve of Eratosthenes is a peculiar, ancient, and intuitive algorithm that generates prime numbers. This post is about my weird obsession with a dumb, probably inefficient algorithm, and my attempt to parallelize it and actually put to use graphics cards I normally just play Grand Theft Auto 5 on.&lt;/p&gt;
-&lt;hr /&gt;
+<content type="html" xml:base="http://localhost:3000/soe/">&lt;p&gt;Advanced concepts in computer science can sometimes be difficult to understand and difficult to execute. A great example of this is tail recurison in functional programming. The conept is easy to explain, and the notion of it running in constant stack space is easy to accept. However building programs and algorithms to be tail recursive can be a difficult task that isn’t very easy to teach. In a similar fashion explaining Floydd Warshall’s, in my opinion, is much harder than writing the simple program that implements it.&lt;/p&gt;
 
-&lt;h2 id=&quot;heading2&quot;&gt;Prime Numbers&lt;/h2&gt;
+&lt;p&gt;Learning the Sieve or Eratosthenes, an anchient and intuitive algorithm that generates prime numbers, reminded me of my first time learning about summing up numbers with for-loops in an intro Java class in high school. I felt this extreme sense of confidence and comfort with programming that began fading away after my first college lab assignment in C. The &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt; just clicks in a way not many &lt;em&gt;“advanced”&lt;/em&gt; concepts do in CS. (Yes I’m abbreviating Sieve of Eratosthenes to save 21 characters you’re welcome).&lt;/p&gt;
 
-&lt;p&gt;Prime numbers are interesting and tons of smart people are doing really compelling research on them. &lt;em&gt;This is definitely not that.&lt;/em&gt; So here’s an elementary explanation of primes  and the &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt; (yes I’m abbreviating Sieve of Eratosthenes to save 21 characters you’re welcome).&lt;/p&gt;
-
-&lt;h2 id=&quot;heading2&quot;&gt;Naive Algorithm&lt;/h2&gt;
+&lt;h2 id=&quot;heading2&quot;&gt;Naive Algorithm to Test for Primes&lt;/h2&gt;
 &lt;p&gt;Testing for a prime number is tricky; here’s a simple slow method to start with:&lt;/p&gt;
 
 &lt;pre&gt;&lt;strong&gt;Given the number x if any prime integer from 2 to sqaureroot(X) evenly divides n it&#39;s NOT prime.&lt;/strong&gt;&lt;/pre&gt;
@@ -174,11 +171,13 @@
 
 &lt;h2 id=&quot;heading2&quot;&gt;The Sieve&lt;/h2&gt;
 
+&lt;p&gt;The Sieve of Eratosthenes was developed by a Greek mathematicions somewhere around 240ish BC.&lt;/p&gt;
+
 &lt;p&gt;I was actually taught the sieve in a course preparing students for programming competitions where we were learning methods of Prime number generation. My love for prime numbers is non-existent, but for some odd reason I found this singular algorithm infuriatingly beautiful. Sure, it doesn’t have the overwhelming existential impacts of max flows and single shortest paths but something about the simple and intuitive nature of the &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt;  differentiated it from the likes of every other algorithm in this class. I found myself revisiting the algorithm two weeks later in a parallel computing course attempting to translate my java to c code and running it through OpenMP for a lab.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;heading3&quot;&gt;The Acutal Algorithm&lt;/h2&gt;
+&lt;h2 id=&quot;heading2&quot;&gt;The Acutal Algorithm&lt;/h2&gt;
 
 &lt;p&gt;The goal is to create a list of prime numbers that we can reference at constant time, ideally we can generate this list more quickly than the naïve approach&lt;/p&gt;
 
@@ -196,38 +195,70 @@
 &lt;pre&gt;&lt;strong&gt;2 3 5 7 11 13 17 19&lt;/strong&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;heading3&quot;&gt; Simple right?&lt;/h2&gt;
+&lt;h2 id=&quot;heading2&quot;&gt; Simple right?&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color:#EB298C&quot;&gt;YES!&lt;/span&gt;&lt;/strong&gt; I think that’s the beauty of it. I’d like to take this simple concept and see how far I can attempt to speed it up and benchmark it.&lt;/p&gt;
 
-&lt;p&gt;Watch this GIF that illustrates the algorithm perfectly (thanks Wikipedia) reload the page if it’s finished (gonna add click to play later)&lt;/p&gt;
+&lt;p&gt;Watch this GIF that illustrates the algorithm perfectly (thanks Wikipedia) reload the page if it’s finished.&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&quot;Sieve of Eratosthenes animation&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0b/Sieve_of_Eratosthenes_animation.svg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;And that’s the &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt;. Okay so it’s definitely not the fastest way to generate primes probably not the most efficient way to write an isPrime method either. &lt;em&gt;But it’s SO easy to explain and understand.&lt;/em&gt; Learning this method reminded me of my first time learning about summing up numbers with for-loops in an intro Java class in high school where I felt this sense of achievement, confidence, and comfort with programming that was completely lost after my first college lab assignment in C. The &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt; just clicks in a way not many &lt;em&gt;“advanced”&lt;/em&gt; concepts do in CS.&lt;/p&gt;
+&lt;p&gt;And that’s the &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt;. There are faster variations (see Euler’s Sieve and this &lt;a href=&quot;http://www.cs.utexas.edu/users/misra/scannedPdf.dir/linearSieve.pdf&quot;&gt;paper&lt;/a&gt;). &lt;em&gt;But this algorithm is relatively easy to explain and understand.&lt;/em&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;!---
+&lt;hr/&gt;
+&lt;h2 id=&quot;heading2&quot;&gt; Here&#39;s the sieve in Java: &lt;/h2&gt;
 
-&lt;h2 id=&quot;heading3&quot;&gt; Stuff below is all draft still so don&#39;t read it &lt;/h2&gt;
-&lt;p&gt;Here’s the sieve in Java:&lt;/p&gt;
 
-&lt;p&gt;Here’s the implementation in C:&lt;/p&gt;
 
-&lt;p&gt;Parallelization? Is this a word? Making to parallels codes:&lt;/p&gt;
+&lt;h2 id=&quot;heading2&quot;&gt;Here&#39;s the implementation in C: &lt;/h2&gt; 
 
-&lt;p&gt;Parallel computing is a sexy buzzword and this is not a guide on how to parallelize things. If you’re interested in learning I can point you to my amazing college professor for the course I took; his course material is all in comic sans on a jarring neon background, but his lectures were fantastic. (MAYBE ADD THE NAME)&lt;/p&gt;
+ 
 
-&lt;p&gt;This is probably not a great CUDA task:&lt;/p&gt;
+Parallelization? Is this a word? Making to parallels codes: 
 
-&lt;p&gt;-Running the sieve with OpenMP or MPI makes a LOT of sense. But unfortunately upon my graduation I lost my NYU-server privellages and no longer have access to multicore, distributed computing resources yayyyyy. Being an Alumni sucks they just don’t love you anymore.&lt;/p&gt;
+This is not a guide to parallelizing code, If you&#39;re interested in learning I can point you to my amazing college professor for the course I took; his course material is all in comic sans on a jarring neon background, but his lectures were fantastic.
+ 
 
-&lt;p&gt;-Runnign the sieve on CUDA probably DOESN’T make sense. BUT I have a brand new Psacal Titan X from Nvidia and it would be a crime to leave all those CUDA cores to rendering GTA V at 4K Resolution and training baby predictive models for my fantasy football league… SO I’m going to try to find a way to break apart the algorithm and utilize CUDA to see if it speeds things up.&lt;/p&gt;
+&lt;h2 id=&quot;heading2&quot;&gt;This is probably not a great CUDA task:&lt;/h2&gt; 
+
+-Running the sieve with OpenMP or MPI makes a lot of sense, I do think that achieving a speedup from GPU parallelizations might be difficult given memory restrictions in cuda but I decided to investigate.
+
+-Runnign the sieve on CUDA probably doesn&#39;t make direct sense given the speedup that induced by GPU parallelization. But I have a brand new Water Cooled Psacal Titan X from Nvidia and it would be a crime to leave all those CUDA cores to rendering GTA V at 4K Resolution and training baby predictive models for my fantasy football league… So I&#39;m going to try to find a way to utilize the GPU cuda cores to generate primes.
+--&gt;
+
 </content>
 <author>
 <name>shantanujoshi</name>
 </author>
 <category term="cs" />
-<summary>The Sieve of Eratosthenes is a peculiar, ancient, and intuitive algorithm that generates prime numbers. This post is about my weird obsession with a dumb, probably inefficient algorithm, and my attempt to parallelize it and actually put to use graphics cards I normally just play Grand Theft Auto 5 on.</summary>
+<summary>Advanced concepts in computer science can sometimes be difficult to understand and difficult to execute. A great example of this is tail recurison in functional programming. The conept is easy to explain, and the notion of it running in constant stack space is easy to accept. However building programs and algorithms to be tail recursive can be a difficult task that isn’t very easy to teach. In a similar fashion explaining Floydd Warshall’s, in my opinion, is much harder than writing the simple program that implements it.</summary>
+</entry>
+<entry>
+<title>Compresssing Images in Python</title>
+<link href="http://localhost:3000/python-image-compression/" rel="alternate" type="text/html" title="Compresssing Images in Python" />
+<published>2016-07-31T15:08:00-04:00</published>
+<updated>2016-07-31T15:08:00-04:00</updated>
+<id>http://localhost:3000/python-image-compression</id>
+<content type="html" xml:base="http://localhost:3000/python-image-compression/">&lt;p&gt;While working on website performance tuning for some part time work I needed to find a way to compress 100,000+ images for an ecommerce website’s catalog. The current solution to image compression was a “designer” who would bulk process images in photoshop with a macro. He had worked for 4 days straight and estimated a 2 week completion time for processing all the pictures.&lt;/p&gt;
+
+&lt;p&gt;The images were simply too large in file size and the wrong dimensions. Each image had to be both scaled to fit within fixed square pixel dimensions and reduced in file size.&lt;/p&gt;
+
+&lt;p&gt;I wrote a pythons script (attached below) to compress the files for this specific task. But I thought I’d rewrite it to work for compressing images for this blog given that having a post with 15 10mb images would not be great for load times.&lt;/p&gt;
+
+&lt;p&gt;Here’s my version of the image compression script built for compressing images in a given directory to a managebale size using Pil (or Pillow) a python library that does most of the work here.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt; If you’re looking for something that can also change image dimensions see &lt;a href=&quot;https://gist.github.com/ShantanuJoshi/44e9b72a985d5d6b4e8df2810ce5d25e&quot;&gt;here&lt;/a&gt; &lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;heading2&quot;&gt;CompressMe.py&lt;/h2&gt;
+&lt;script src=&quot;https://gist.github.com/ShantanuJoshi/23ac55479ab9a613230bd9467d080f33.js&quot;&gt;&lt;/script&gt;
+
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<category term="cs" />
+<summary>While working on website performance tuning for some part time work I needed to find a way to compress 100,000+ images for an ecommerce website’s catalog. The current solution to image compression was a “designer” who would bulk process images in photoshop with a macro. He had worked for 4 days straight and estimated a 2 week completion time for processing all the pictures.</summary>
 </entry>
 <entry>
 <title>First Post Readme</title>
