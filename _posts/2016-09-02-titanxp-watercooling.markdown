@@ -154,4 +154,4 @@ Here are my results:
  
 
 <h2>Step 7: Grinding a Space for the Capacitors</h2> 
-(Still in progress, the rest of the tutorial will be updated later today) 
+(Still in progress, the rest of the tutorial will be updated later today)

@@ -3,10 +3,65 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-08T16:37:22-04:00</updated>
+<updated>2016-09-09T01:03:43-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>A blog about technology and stuff related</subtitle>
+<entry>
+<title>Booting Into Linux from the Grub Prompt from an NVME Drive</title>
+<link href="http://localhost:3000/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting Into Linux from the Grub Prompt from an NVME Drive" />
+<published>2016-09-09T00:15:00-04:00</published>
+<updated>2016-09-09T00:15:00-04:00</updated>
+<id>http://localhost:3000/grub-prompt-nvme</id>
+<content type="html" xml:base="http://localhost:3000/grub-prompt-nvme/">&lt;p&gt;For the first time in my foray into Linux for the past few years now I ran into the dreaded grub prompt at boot.&lt;/p&gt;
+
+&lt;p&gt;It looks a lot like this:
+&lt;img src=&quot;http://terminalinflection.com/wordpress/wp-content/uploads/2012/10/GRUB-Ubuntu.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This basically means that the grub install is corrupted and GRUB doesn’t know how to boot.&lt;/p&gt;
+
+&lt;p&gt;There are quite a few tutorials on recovering from a grub, infact the image above includes most of the neccesary steps to booting into grub. But here’s my experience recovering from this prompt with an NVME Pcie SSD. In my first attempt to follow the steps below I had a kernel panic and had to start from scractch because I followed the steps to a regular recovery.&lt;/p&gt;
+
+&lt;h2 id=&quot;heading2&quot;&gt; Steps to Recover from the Grub Prompt &lt;/h2&gt;
+&lt;p&gt;Here’s a step by step method to how I recovered from the grub prompt, fixed grub, and rebooted to write this post.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 1: Getting Out of the Grub Prompt&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;ls&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; to see which drives are mounted&lt;/li&gt;
+&lt;li&gt;Type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;ls (hd0,1)/&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; and repeat this until you find the drive &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;(hdX, Y)/&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; with your boot disk &lt;/li&gt;
+&lt;li&gt;Once you&#39;ve found your boot disk type: &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;set root=(hdX,X)&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; where X is your drive/partition number &lt;/li&gt;
+&lt;li&gt;The next part depends on your version of Linux (but if you&#39;re after version 12 you&#39;re good so keep reading)&lt;/li&gt;
+&lt;li&gt;Type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;linux /vmlinuz root=/dev/nvme0nXpY &lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; where X is the X from hdX which is your boot drive, and Y which is the partition number on that drive that the boot partition.&lt;/li&gt;
+&lt;li&gt;initrd /initrd.img&lt;/li&gt;
+&lt;li&gt;boot&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 2: Booting into Linux and Repairing GRUB&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;After beginnning the boot process from the prompt I noticed a flickering TTY screen at boot due probably to my Nvidia drivers or some other permissions error. I knew to basically type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;Ctrl + F1&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; until I got get a TTY screen (which would disappear within 3 seconds due to the nature of this flickering bug, and could be brought back by pressing &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;Ctrl + F1&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;So while fighting with the flickering TTY screen I had to enter my username, password, and the command &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo service GDM stop&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;. This command may be: &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo service lightdm stop&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; if you have a different display manager.&lt;/p&gt;
+
+&lt;p&gt;Basically my display manager was in a corrupted loop because the .Xauthority file’s permissions are altered either during the grub prompt boot. The permissions change to root effectively. As a result upon stopping the display manager I am able to access the TTY and preform the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt; Type the command &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;update-grub&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; in the tty &lt;/li&gt;
+&lt;li&gt; You should see a series of images to add to the grub menu, next enter &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;grub-install /dev/nvme0nXpY&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; as per your prior boot drive and partition&lt;/li&gt;
+&lt;li&gt; Now to check .Xauthority permissions, type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo ls -lah&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; in your home directory to see what the permissions settings are for .Xauthority file. In my case this was &quot;root:root&quot;&lt;/li&gt;
+&lt;li&gt; To repair .Xauthority type the following replacing username with your username &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;chown username:username .Xauthority&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; in my case I typed shantanu:shantanu &lt;/li&gt;
+&lt;li&gt; Type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo reboot&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; and hope for the best &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;After this I waited for the grub screen and indeed it worked. The NVME0nXpY thing was neccesary for me to boot and subsequently type this post.&lt;/p&gt;
+
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<category term="linux" />
+<summary>For the first time in my foray into Linux for the past few years now I ran into the dreaded grub prompt at boot.</summary>
+</entry>
 <entry>
 <title>Getting Pascal GPU’s to Work on Linux</title>
 <link href="http://localhost:3000/nvidiabuntu/" rel="alternate" type="text/html" title="Getting Pascal GPU&#39;s to Work on Linux" />
