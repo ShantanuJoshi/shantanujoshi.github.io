@@ -1,5 +1,5 @@
 ---
-title: "Booting Into Linux from the Grub Prompt from an NVME Drive"
+title: "Booting Into Linux from the Grub Prompt with an NVME Drive"
 layout: post
 date: 2016-09-09 00:15
 tag: linux
