@@ -80,6 +80,11 @@ Start by removing the 5 screws on the IO plate, the two screws for the DVI port,
 Get yourself two allan/hex keys/bit, a tiny phillips 00, and a larger philips head. I didn't take pictures of the cooler removal given that there's no real trick here. Here's the best order of operations for the removal: 
 <ol>
 <li>Remove the back plate by carefully unscrewing the TINY screws holding it in place (one part of the backplate slides out of the other)</li>
+{% include image.html
+            img="assets/images/TitanXPMod/backplategone.JPG"
+            title="Backplate Removed"
+            caption="Backplate Removed" %}
+
 <li>Use the smaller allan key to remove all the screws surrounding the cooler, the four larger screws next to the clear window are only there to hold the window to the plate itself (see photo of larger screws)</li>
 </ol>
 
@@ -91,11 +96,20 @@ Get yourself two allan/hex keys/bit, a tiny phillips 00, and a larger philips he
  
 
 
-Step 3: Remove the Cooler 
+<h2>Step 3: Remove the Cooler</h2> 
 
 Again I didn't think this step needed documentation. The best way to do it is remove the section with the window first, you will experience some resistance from the thermal compound on the heatsink but ignore it. Next remove the second cooler, be careful of the wire connecting the fan to the PCB and remove it carefully. Once the entire cooler is removed and you've wiped the GPU surface with a microfiber cloth dipped in some alcohol... 
 
- 
+Watch out for these wires when removing the two parts of the cooler
+<div class="side-by-side">
+    <div class="toleft">
+        <p><img class="image" src="/assets/images/TitanXPMod/blowerfanwire.JPG"></p>
+    </div>
+    <div class="toright">
+        <p><img class="image" src="/assets/images/TitanXPMod/ledwire.JPG"></p>
+    </div>
+</div>
+
 
 It should look something like this: 
  
@@ -154,4 +168,5 @@ Here are my results:
  
 
 <h2>Step 7: Grinding a Space for the Capacitors</h2> 
-(Still in progress, the rest of the tutorial will be updated later today)
+
+My images were somehow lost from the camera. Will have to retake and upload the rest. Stay tuned...

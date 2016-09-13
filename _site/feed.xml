@@ -3,13 +3,13 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-13T11:51:15-04:00</updated>
+<updated>2016-09-13T15:07:01-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
-<subtitle>A blog about technology and stuff related</subtitle>
+<subtitle>Shantanu&#39;s blog</subtitle>
 <entry>
-<title>Booting Into Linux from the Grub Prompt with an NVME Drive</title>
-<link href="http://localhost:3000/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting Into Linux from the Grub Prompt with an NVME Drive" />
+<title>Booting into Linux from the Grub Prompt with an NVME Drive</title>
+<link href="http://localhost:3000/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting into Linux from the Grub Prompt with an NVME Drive" />
 <published>2016-09-09T00:15:00-04:00</published>
 <updated>2016-09-09T00:15:00-04:00</updated>
 <id>http://localhost:3000/grub-prompt-nvme</id>
@@ -246,6 +246,11 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 &lt;p&gt;Get yourself two allan/hex keys/bit, a tiny phillips 00, and a larger philips head. I didn’t take pictures of the cooler removal given that there’s no real trick here. Here’s the best order of operations for the removal:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Remove the back plate by carefully unscrewing the TINY screws holding it in place (one part of the backplate slides out of the other)&lt;/li&gt;
+{% include image.html
+            img=&quot;assets/images/TitanXPMod/backplategone.JPG&quot;
+            title=&quot;Backplate Removed&quot;
+            caption=&quot;Backplate Removed&quot; %}
+
 &lt;li&gt;Use the smaller allan key to remove all the screws surrounding the cooler, the four larger screws next to the clear window are only there to hold the window to the plate itself (see photo of larger screws)&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -254,9 +259,19 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
             title=”Titan X Cooler Screws”
             caption=”Remove all but the optional circled screws” %}&lt;/p&gt;
 
-&lt;p&gt;Step 3: Remove the Cooler&lt;/p&gt;
+&lt;h2&gt;Step 3: Remove the Cooler&lt;/h2&gt;
 
 &lt;p&gt;Again I didn’t think this step needed documentation. The best way to do it is remove the section with the window first, you will experience some resistance from the thermal compound on the heatsink but ignore it. Next remove the second cooler, be careful of the wire connecting the fan to the PCB and remove it carefully. Once the entire cooler is removed and you’ve wiped the GPU surface with a microfiber cloth dipped in some alcohol…&lt;/p&gt;
+
+&lt;p&gt;Watch out for these wires when removing the two parts of the cooler&lt;/p&gt;
+&lt;div class=&quot;side-by-side&quot;&gt;
+    &lt;div class=&quot;toleft&quot;&gt;
+        &lt;p&gt;&lt;img class=&quot;image&quot; src=&quot;/assets/images/TitanXPMod/blowerfanwire.JPG&quot; /&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;toright&quot;&gt;
+        &lt;p&gt;&lt;img class=&quot;image&quot; src=&quot;/assets/images/TitanXPMod/ledwire.JPG&quot; /&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;It should look something like this:&lt;/p&gt;
 
@@ -305,7 +320,8 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
             caption=”Wider View of the Cut for Scale” %}&lt;/p&gt;
 
 &lt;h2&gt;Step 7: Grinding a Space for the Capacitors&lt;/h2&gt;
-&lt;p&gt;(Still in progress, the rest of the tutorial will be updated later today)&lt;/p&gt;
+
+&lt;p&gt;My images were somehow lost from the camera. Will have to retake and upload the rest. Stay tuned…&lt;/p&gt;
 </content>
 <author>
 <name>shantanujoshi</name>
@@ -420,6 +436,99 @@ This is not a guide to parallelizing code, If you&#39;re interested in learning 
 </author>
 <category term="cs" />
 <summary>While working on website performance tuning for some part time work I needed to find a way to compress 100,000+ images for an ecommerce website’s catalog. The current solution to image compression was a “designer” who would bulk process images in photoshop with a macro. He had worked for 4 days straight and estimated a 2 week completion time for processing all the pictures.</summary>
+</entry>
+<entry>
+<title>Salvaging a Broken Lenovo Yoga 900</title>
+<link href="http://localhost:3000/lenovo-yoga-screen-repair/" rel="alternate" type="text/html" title="Salvaging a Broken Lenovo Yoga 900" />
+<published>2016-07-06T14:24:00-04:00</published>
+<updated>2016-07-06T14:24:00-04:00</updated>
+<id>http://localhost:3000/lenovo-yoga-screen-repair</id>
+<content type="html" xml:base="http://localhost:3000/lenovo-yoga-screen-repair/">&lt;p&gt;Due to various random circumstances I was given a Lenovo Yoga 900 with a shattered screen for free, the laptop is worth around $1200 new, but this guy had a broken screen and no charger. After getting a replacement charger and booting the computer I learned that it had an i7 processor and 16 gigs of ram and a high resolution display &lt;img class=&quot;emoji&quot; title=&quot;:flushed:&quot; alt=&quot;:flushed:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f633.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;. I decided to find a replacement screen on ebay for $300 and try to fix the laptop myself. Given that this was when the laptop just launcheed I had no reference or teardowns and no one seemed to have taken apart the display assembly but here’s my attempt to replace the screen.&lt;/p&gt;
+
+&lt;h2&gt; Removing the Old Panel&lt;/h2&gt;
+
+&lt;p&gt;I found out that the screen I purchased was JUST the led assembly. So I tried to use a heat gun to melt the adhesive spereating the LED from the display housing itself and here’s what I ended up with:&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/yogafix/1.jpg”
+            title=”Broken Screen”
+            caption=”Display Housing Removed from the Panel” %}&lt;/p&gt;
+
+&lt;h2&gt; Now what? &lt;/h2&gt;
+&lt;p&gt;Yes the entire display assembly is shattered and there’s no way of reattaching the new panel to the housing.. but all the housing does is hold a few sensors, the webcam, and some antennas in place while also adhering the display itself to a back plate that attaches to the laptop itself. I decided that thick double sided foam tape would be more than enough to replace the side display housing and attach the screen to the back plate.&lt;/p&gt;
+
+&lt;p&gt;In addition I just used the double sided tape to attach the sensors I removed directly to the replacement display panel. Here’s what it looks like:&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/yogafix/2.jpg”
+            title=”Adding sensors”
+            caption=”Adding the Webcam/Sensors/Antennas” %}&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/yogafix/3plus.jpg”
+            title=”Side View”
+            caption=”The Entire Display” %}&lt;/p&gt;
+
+&lt;p&gt;Not too bad…&lt;/p&gt;
+
+&lt;h2&gt; Filling the Space of the Display Assembly&lt;/h2&gt;
+&lt;p&gt;In order to fill the missing space and attach the display to the back plate (which is attached to the laptop hinge) I used strong 3m double sided foam tape. I stacked the tape in order to make sure that the housing was evenly attached and sort of eyeballed the amount. Here’s the taped up display: (notice the gray tape alone the edges)&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/yogafix/3.jpg”
+            title=”Display w. Tape”
+            caption=”Gray 3m Tape Along the Display Edges, Back Plate Underneath” %}&lt;/p&gt;
+
+&lt;h2&gt; Attaching Everything&lt;/h2&gt;
+&lt;p&gt;As I attached the display to the housing I quickly realized that I had made a huge mistake attempting to stack the 3m tape. Not realizing that the back panel is slightly curved accoutning for the display itself, I used absolutely double the amount of tape I needed to fill this gap. And as a result here’s what the side of the laptop looks like:&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+        	img=”assets/images/yogafix/4.jpg”
+            title=”Side View”
+            caption=”Foam Tape Bezels” %}&lt;/p&gt;
+
+&lt;h2&gt; It definitely still works...&lt;/h2&gt;
+&lt;p&gt;{% include image.html
+        	img=”assets/images/yogafix/5.jpg”
+            title=”Side View”
+            caption=”Windows 10 Testing” %}&lt;/p&gt;
+
+&lt;h2&gt; Aftermath&lt;/h2&gt;
+&lt;p&gt;I decided to dual boot linux on this laptop and used it as a primary computer for a while. I love the form factor but defintiely didn’t need another computer. I decided to sell it and included the fact that the display bezel was missing from the price. The broken laptop would’ve sold for around $200-$300 according to sold listings on Ebay. After fixing the screen I was able to get $700 so no complaints there.&lt;/p&gt;
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<category term="hardware" />
+<summary>Due to various random circumstances I was given a Lenovo Yoga 900 with a shattered screen for free, the laptop is worth around $1200 new, but this guy had a broken screen and no charger. After getting a replacement charger and booting the computer I learned that it had an i7 processor and 16 gigs of ram and a high resolution display :flushed:. I decided to find a replacement screen on ebay for $300 and try to fix the laptop myself. Given that this was when the laptop just launcheed I had no reference or teardowns and no one seemed to have taken apart the display assembly but here’s my attempt to replace the screen.</summary>
+</entry>
+<entry>
+<title>NYC Mechanical Keyboard Meetup</title>
+<link href="http://localhost:3000/nyc-keyboard-meetup/" rel="alternate" type="text/html" title="NYC Mechanical Keyboard Meetup" />
+<published>2016-05-26T12:12:00-04:00</published>
+<updated>2016-05-26T12:12:00-04:00</updated>
+<id>http://localhost:3000/nyc-keyboard-meetup</id>
+<content type="html" xml:base="http://localhost:3000/nyc-keyboard-meetup/">&lt;p&gt;I recently hosted a mechanical keyboard meetup in NYC for keyboard enthusiasts and those wanting to learn about the hobby. The details of the meetup were posted on reddit and in our meetup group &lt;a href=&quot;https://www.meetup.com/Click-clack-Mechanical-Keyboard/events/230786767/&quot;&gt;here&lt;/a&gt;. I was incredibly surprised to find out that nearly 50 people heard about the meetup and attended. We even had Steph and Pete from &lt;a href=&quot;1upkeyboards.com&quot;&gt;1upkeyboards&lt;/a&gt; stop by to showcase some of their custom cables.&lt;/p&gt;
+
+&lt;p&gt;If you’re curious about keyboards I recommend checking out the &lt;a href=&quot;reddit.com/r/mechanicalkeyboards&quot;&gt;subreddit&lt;/a&gt; and perhaps even the &lt;a href=&quot;geekhack.org&quot;&gt;geekhack forums&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt; Here&#39;s some pictures from the event. &lt;/h2&gt;
+&lt;p&gt;The first album is taken by me the other two are a couple other attendees. (click to imgur for high-res pictures)&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/Uorou&quot;&gt;&lt;a href=&quot;//imgur.com/Uorou&quot;&gt;NYC 5/26 Mech Meetup&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/center&gt;
+&lt;center&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/rFkQe&quot;&gt;&lt;a href=&quot;//imgur.com/rFkQe&quot;&gt;NYC Mechanical Keyboard Meetup&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/center&gt;
+&lt;center&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/QyKxG&quot;&gt;&lt;a href=&quot;//imgur.com/QyKxG&quot;&gt;Mechanicahl Keyboards NYC Meetup&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;//s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/center&gt;
+&lt;p&gt;And view from the afterparty for those that stayed:
+&lt;img src=&quot;https://i.imgur.com/b3DOnoW.jpg&quot; alt=&quot;rooftop&quot; /&gt;&lt;/p&gt;
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<category term="keyboards" />
+<summary>I recently hosted a mechanical keyboard meetup in NYC for keyboard enthusiasts and those wanting to learn about the hobby. The details of the meetup were posted on reddit and in our meetup group here. I was incredibly surprised to find out that nearly 50 people heard about the meetup and attended. We even had Steph and Pete from 1upkeyboards stop by to showcase some of their custom cables.</summary>
 </entry>
 <entry>
 <title>Doge</title>
