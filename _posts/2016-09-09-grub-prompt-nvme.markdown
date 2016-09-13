@@ -62,5 +62,3 @@ Basically my display manager was in a corrupted loop because the .Xauthority fil
 </ol>
 
 After this I waited for the grub screen and indeed it worked. The NVME0nXpY thing was neccesary for me to boot and subsequently type this post.
-
-

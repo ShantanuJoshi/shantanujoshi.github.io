@@ -3,13 +3,13 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-09T01:03:43-04:00</updated>
+<updated>2016-09-13T11:30:50-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>A blog about technology and stuff related</subtitle>
 <entry>
-<title>Booting Into Linux from the Grub Prompt from an NVME Drive</title>
-<link href="http://localhost:3000/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting Into Linux from the Grub Prompt from an NVME Drive" />
+<title>Booting Into Linux from the Grub Prompt with an NVME Drive</title>
+<link href="http://localhost:3000/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting Into Linux from the Grub Prompt with an NVME Drive" />
 <published>2016-09-09T00:15:00-04:00</published>
 <updated>2016-09-09T00:15:00-04:00</updated>
 <id>http://localhost:3000/grub-prompt-nvme</id>
@@ -54,7 +54,6 @@
 &lt;/ol&gt;
 
 &lt;p&gt;After this I waited for the grub screen and indeed it worked. The NVME0nXpY thing was neccesary for me to boot and subsequently type this post.&lt;/p&gt;
-
 </content>
 <author>
 <name>shantanujoshi</name>
@@ -80,16 +79,112 @@
 &lt;p&gt;Note: the following steps expect a fresh Ubuntu install. If you’re trying to trouble shoot after installing, getting this to work would require at least being able to boot to TTY which may not be garunteed for certain installs. The basic framework is as follows:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt; Install ubuntu w/ the GPU unplugged or disable the PCIE for the GPU in BIOS &lt;/li&gt;
-&lt;li&gt; Boot into Ubuntu, run ALL updates, get the graphics PPA, and connect to the internet&lt;/li&gt;
-&lt;li&gt; Restart the computer to TTY &lt;/li&gt;
-&lt;li&gt; Purge Nurge nouveau and blacklist it just incase as well&lt;/li&gt;
-&lt;li&gt; Install latest nvidia release nvidia-###&lt;/li&gt;
-&lt;li&gt; Reboot, if it fails go back to tty and check .Xauthority permissions&lt;/li&gt;
+&lt;li&gt; Install Ubuntu: to boot into the installer edit the boot parameters and add nomodeset before quiet splash&lt;/li&gt;
+&lt;li&gt; Boot into Ubuntu with nomodeset, run ALL updates and connect to the internet&lt;/li&gt;
+&lt;li&gt; (Optional) Restart the system, add nomodeset again, download the latest kernel and upgrade the kernel&lt;/li&gt;
+&lt;li&gt; Restart the computer, same setup with nomodeset, add the graphics PPA, then logout &lt;/li&gt;
+&lt;li&gt; Switch to TTY, login and stop the desktop envrionment service (gdm or lightdm depending on your OS)&lt;/li&gt;
+&lt;li&gt; Purge the nouveau driver&lt;/li&gt;
+&lt;li&gt; Install latest nvidia driver &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;nvidia-###&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt; Reboot to your OS&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;These are the basics steps with some troubleshooting inbetween (nomodeset, permissions issues, grub issues). Detailed tutorial to follow.&lt;/p&gt;
+&lt;p&gt;These are the basics steps detailed tutorial below.&lt;/p&gt;
 
+&lt;h2&gt;0. Installing Ubuntu&lt;/h2&gt;
+&lt;p&gt;The steps to installing ubuntu vary based off of your needs. In my case I generally skip the preset options for installation and click “something else” where I can add my own partition scheme. I prefer to create a partition for &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;/&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;/home&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; generally alloting 30-50 gigs for / and the rest for /home on the drive. My tutorial assumes you’ve got a live disk of your chosen distro (personall running Gnome 16.04 because the UI is fantastic).&lt;/p&gt;
+
+&lt;h2&gt;1. Booting into the Live Disk&lt;/h2&gt;
+&lt;p&gt;In order to boot into the live disk for the install you need to highlight the “Intall Ubuntu” option at the live disk grub menu and type &lt;kbd&gt;e&lt;/kbd&gt; to edit the commands and add &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;nomodeset&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; right after “quiet splash”, I also recommend changing quiet splash to &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;noquiet nosplash&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; but that’s optional&lt;/p&gt;
+
+&lt;div class=&quot;side-by-side&quot;&gt;
+	&lt;div class=&quot;toleft&quot;&gt;
+		&lt;p&gt;&lt;img class=&quot;image&quot; src=&quot;http://www.tecmint.com/wp-content/uploads/2016/04/Ubuntu-16.04-Boot-Screen.png&quot; alt=&quot;Alt Text&quot; /&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;toright&quot;&gt;
+	&lt;img class=&quot;image&quot; src=&quot;https://www.maketecheasier.com/assets/uploads/2009/12/ubuntukarmic-edit-grub-entr.png&quot; alt=&quot;Alt Text&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;2. Boot into Ubuntu&lt;/h2&gt;
+&lt;p&gt;After the install you should see the regular grub menu, once the grub menu appears type “e” again to edit the boot commands and type nomodeset as in step 1. Nomodeset is neccesary at boot because it disables certain video drivers which may fail with newer GPU’s.&lt;/p&gt;
+
+&lt;p&gt;Once logged in, connect to the internet and open up a terminal window and run: &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get upgrade&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;, and &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get dist-upgrade&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;. Some people tend to add &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;-y&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; but I don’t really mind so I do them one at a time in case there are errors.&lt;/p&gt;
+
+&lt;p&gt;Lastly reboot the system and use nomodeset to login again. At this point you’re an expert at adding nomodeset to the boot commands so just assume anytime there is a reboot (unless otherwise stated) just add nomodeset to boot.&lt;/p&gt;
+
+&lt;h2&gt;2.a (Optional) Kernel Update&lt;/h2&gt;
+&lt;p&gt;I like to run the latest RC kernel because there’s generally better compatibility with new hardware but it’s not neccesarily 100% stable. More like 98% stable in my experience. Given the new hardware I atleast recommend preforming a kernel update to the latest kernel (non RC) to be safe but it’s optional.&lt;/p&gt;
+
+&lt;p&gt;Click &lt;a href=&quot;http://kernel.ubuntu.com/~kernel-ppa/mainline/&quot;&gt;here&lt;/a&gt; to see the latest kernel builds:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;From the link above find the folder for the latest kernel (in my case at the time of writing this is 4.8-rc6 but 4.7 is the latest final release)&lt;/li&gt;
+&lt;li&gt; Depending on your distribution download 3 deb files for your distro. In my case I am running generic linux (default) and need the following deb files: &lt;pre&gt;linux-headers-4.8.0-040800rc6_4.8.0-040800rc6.201609121119_all.deb
+linux-headers-4.8.0-040800rc6-generic_4.8.0-040800rc6.201609121119_amd64.deb
+linux-image-4.8.0-040800rc6-generic_4.8.0-040800rc6.201609121119_amd64.deb&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt; Move the files to an empty folder, open terminal and cd to that folder&lt;/li&gt;
+&lt;li&gt; In order to install the kernels type: &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo dpkg -i *.deb&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; which will install each of the deb files you downloaded&lt;/li&gt;
+&lt;li&gt; After completing the install restart the computer and login&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt; 3.Add the Graphics PPA &lt;/h2&gt;
+&lt;p&gt;Open terminal and type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo add-apt-repository ppa:graphics-drivers/ppa&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; then run &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt; 4. Logout and Remove Nouveau&lt;/h2&gt;
+&lt;p&gt;Some people say removing nouveau isn’t neccesary, but in my experience it causes more problems when disabled and tends to restart itself during updates. As a result I recommend removing nouveau. In order to remove nouveau, disbale the desktop environment, and install the graphics drivers do the following:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt; Logout of your account and at the login screen type &lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;F1&lt;/kbd&gt; to switch to &quot;tty1&quot;&lt;/li&gt;
+&lt;li&gt; Type your username and password into the console to login to your account&lt;/li&gt;
+&lt;li&gt; Depedning on your desktop environment, type either &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo service gdm stop&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo service lightdm stop&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; to disable the desktop envrionment&lt;/li&gt;
+&lt;li&gt;Next remove nouveau with by typing: &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get --purge remove xserver-xorg-video-nouveau&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt; Now that nouveau is removed, we can go ahead and install the latest nvidia driver by typing &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get intall nvidia-&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; and pressing &lt;kbd&gt;TAB&lt;/kbd&gt; to see the drivers available&lt;/li&gt;
+&lt;li&gt; In my case the latest driver (highest number after nvidia-) was &quot;nvidia-370&quot; so I installed the driver by typing &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo apt-get intall nvidia-370&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt; 5. Reboot the OS and Test&lt;/h2&gt;
+&lt;p&gt;The final step is to type &lt;strong&gt;&lt;code&gt;&lt;span class=&quot;evidence&quot;&gt;sudo reboot-&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; to restart the computer. This time you &lt;strong&gt;&lt;em&gt; do not&lt;/em&gt;&lt;/strong&gt; need to type nomodeset at the grub menu. If all goes well you should be able to boot into the OS without any problems.&lt;/p&gt;
+
+&lt;p&gt;So far I have been able to successfully run the latest nvidia GPUs on the following systems multiple times with these steps:&lt;/p&gt;
+
+&lt;p&gt;Desktops:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Motherboard&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Proccessor&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;GPU&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Asus Maximus VIII Gene&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;i7 6700k&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Titan XP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Asus Z170 Pro Gaming&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;i7 6700&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GTX 1080 and 1070&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Gigabyte Z170 Wifi&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;i5 6600k&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GTX 1070&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Laptops:
+Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks to install and run a dual boot but the graphics card install was identical)&lt;/p&gt;
+
+&lt;p&gt;If the install fails I recommend the following trouble-shooting steps:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you get the login screen but can&#39;t get the desktop, swithc to TTY and check the permissions of the .Xauthority file in your home folder&lt;/li&gt;
+&lt;li&gt;If you&#39;re getting a flickering screen and no login screen, switch to TTY and try to stop the display manager and repair the install there&lt;/li&gt; 
+&lt;/ul&gt;
 </content>
 <author>
 <name>shantanujoshi</name>
