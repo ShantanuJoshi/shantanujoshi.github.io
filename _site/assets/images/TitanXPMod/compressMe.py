@@ -14,7 +14,7 @@ def compressMe(file, verbose=False):
 	
 	dim = picture.size
 		
-	picture.save("Compressed_"+file,"JPEG",optimize=True,quality=85) 
+	picture.save("Compressed_"+file,"JPEG",optimize=True,quality=65) 
 	
 	newsize = os.stat(os.path.join(os.getcwd(),"Compressed_"+file)).st_size
 	percent = (oldsize-newsize)/float(oldsize)*100
@@ -38,7 +38,7 @@ def main():
 	for file in os.listdir(pwd):
 		if os.path.splitext(file)[1].lower() in ('.jpg', '.jpeg'):
 			num += 1
-			tot += compressMeNoDim(file, verbose)
+			tot += compressMe(file, verbose)
 	print "Average Compression: %d" % (float(tot)/num)
 	print "Done"
 
