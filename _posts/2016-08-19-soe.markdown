@@ -61,7 +61,7 @@ Watch this GIF that illustrates the algorithm perfectly (thanks Wikipedia) reloa
 
 <p><img alt="Sieve of Eratosthenes animation" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Sieve_of_Eratosthenes_animation.svg"/></p>
 
-And that's the <span style="color:#1abc9c">SOE</span>. There are faster variations (see Euler's Sieve and this [paper](http://www.cs.utexas.edu/users/misra/scannedPdf.dir/linearSieve.pdf)). <em>But this algorithm is relatively easy to explain and understand.</em> 
+And that's the <span style="color:#1abc9c">SOE</span>. There are faster variations (see Euler's Sieve and this [paper](https://www.cs.utexas.edu/users/misra/scannedPdf.dir/linearSieve.pdf)). <em>But this algorithm is relatively easy to explain and understand.</em> 
 
 <!---
 <hr/>

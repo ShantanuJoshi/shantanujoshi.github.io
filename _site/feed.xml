@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-13T11:30:50-04:00</updated>
+<updated>2016-09-13T11:46:08-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>A blog about technology and stuff related</subtitle>
@@ -13,14 +13,14 @@
 <published>2016-09-09T00:15:00-04:00</published>
 <updated>2016-09-09T00:15:00-04:00</updated>
 <id>http://localhost:3000/grub-prompt-nvme</id>
-<content type="html" xml:base="http://localhost:3000/grub-prompt-nvme/">&lt;p&gt;For the first time in my foray into Linux for the past few years now I ran into the dreaded grub prompt at boot.&lt;/p&gt;
+<content type="html" xml:base="http://localhost:3000/grub-prompt-nvme/">&lt;p&gt;For the first time since my foray into Linux 4/5 years ago, I ran into the dreaded grub prompt at boot.&lt;/p&gt;
 
 &lt;p&gt;It looks a lot like this:
-&lt;img src=&quot;http://terminalinflection.com/wordpress/wp-content/uploads/2012/10/GRUB-Ubuntu.png&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://terminalinflection.com/wordpress/wp-content/uploads/2012/10/GRUB-Ubuntu.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This basically means that the grub install is corrupted and GRUB doesn’t know how to boot.&lt;/p&gt;
 
-&lt;p&gt;There are quite a few tutorials on recovering from a grub, infact the image above includes most of the neccesary steps to booting into grub. But here’s my experience recovering from this prompt with an NVME Pcie SSD. In my first attempt to follow the steps below I had a kernel panic and had to start from scractch because I followed the steps to a regular recovery.&lt;/p&gt;
+&lt;p&gt;There are quite a few tutorials on recovering from grub rescue mode, infact the image above includes most of the neccesary steps to booting into grub. But here’s my experience recovering from this prompt with an NVME Pcie SSD. In my first attempt to follow the steps below I had a kernel panic and had to start from scractch because I followed the steps to a regular recovery.&lt;/p&gt;
 
 &lt;h2 id=&quot;heading2&quot;&gt; Steps to Recover from the Grub Prompt &lt;/h2&gt;
 &lt;p&gt;Here’s a step by step method to how I recovered from the grub prompt, fixed grub, and rebooted to write this post.&lt;/p&gt;
@@ -59,7 +59,7 @@
 <name>shantanujoshi</name>
 </author>
 <category term="linux" />
-<summary>For the first time in my foray into Linux for the past few years now I ran into the dreaded grub prompt at boot.</summary>
+<summary>For the first time since my foray into Linux 4/5 years ago, I ran into the dreaded grub prompt at boot.</summary>
 </entry>
 <entry>
 <title>Getting Pascal GPU’s to Work on Linux</title>
@@ -228,8 +228,8 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 &lt;ul&gt;
 &lt;li&gt;Keep careful track of all the screws, you&#39;ll need them in the future &lt;/li&gt;
 &lt;li&gt;Try to find a dremel tool, if you don&#39;t have one it&#39;s a perfect opportunity to pick one up, I&#39;ll specify the attachment bits used in each step&lt;/li&gt;
-&lt;li&gt;If you&#39;re afraid or unsure of removing the GPU cooler from the PCB I recommend watching this video detailing the teardown of the Titan X: https://www.youtube.com/watch?v=H7HN3CDxMQk&lt;/li&gt;
-&lt;li&gt;You must ground yourself somehow while doing this. Here&#39;s a link as to why it&#39;s necessary: http://www.tomshardware.com/faq/id-2121341/ground-building-computer.html&lt;/li&gt;
+&lt;li&gt;If you&#39;re afraid or unsure of removing the GPU cooler from the PCB I recommend watching this &lt;a href=&quot;https://www.youtube.com/watch?v=H7HN3CDxMQk&quot;&gt;video&lt;/a&gt; detailing the teardown of the Titan X&lt;/li&gt;
+&lt;li&gt;You must ground yourself somehow while doing this. Click &lt;a href=&quot;https://www.tomshardware.com/faq/id-2121341/ground-building-computer.html&quot;&gt;here&lt;/a&gt; to learn why it&#39;s necessary&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Step 1: Remove the IO Plate&lt;/h2&gt;
@@ -364,7 +364,7 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 
 &lt;p&gt;&lt;img alt=&quot;Sieve of Eratosthenes animation&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0b/Sieve_of_Eratosthenes_animation.svg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;And that’s the &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt;. There are faster variations (see Euler’s Sieve and this &lt;a href=&quot;http://www.cs.utexas.edu/users/misra/scannedPdf.dir/linearSieve.pdf&quot;&gt;paper&lt;/a&gt;). &lt;em&gt;But this algorithm is relatively easy to explain and understand.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;And that’s the &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt;. There are faster variations (see Euler’s Sieve and this &lt;a href=&quot;https://www.cs.utexas.edu/users/misra/scannedPdf.dir/linearSieve.pdf&quot;&gt;paper&lt;/a&gt;). &lt;em&gt;But this algorithm is relatively easy to explain and understand.&lt;/em&gt;&lt;/p&gt;
 
 &lt;!---
 &lt;hr/&gt;

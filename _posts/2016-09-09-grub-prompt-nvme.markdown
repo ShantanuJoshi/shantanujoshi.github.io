@@ -14,14 +14,14 @@ author: shantanujoshi
 externalLink: false
 ---
 
-For the first time in my foray into Linux for the past few years now I ran into the dreaded grub prompt at boot. 
+For the first time since my foray into Linux 4/5 years ago, I ran into the dreaded grub prompt at boot.
 
 It looks a lot like this:
-<img src="http://terminalinflection.com/wordpress/wp-content/uploads/2012/10/GRUB-Ubuntu.png">
+<img src="https://terminalinflection.com/wordpress/wp-content/uploads/2012/10/GRUB-Ubuntu.png">
 
 This basically means that the grub install is corrupted and GRUB doesn't know how to boot.
 
-There are quite a few tutorials on recovering from a grub, infact the image above includes most of the neccesary steps to booting into grub. But here's my experience recovering from this prompt with an NVME Pcie SSD. In my first attempt to follow the steps below I had a kernel panic and had to start from scractch because I followed the steps to a regular recovery.
+There are quite a few tutorials on recovering from grub rescue mode, infact the image above includes most of the neccesary steps to booting into grub. But here's my experience recovering from this prompt with an NVME Pcie SSD. In my first attempt to follow the steps below I had a kernel panic and had to start from scractch because I followed the steps to a regular recovery.
 
 <h2 id="heading2"> Steps to Recover from the Grub Prompt </h2>
 Here's a step by step method to how I recovered from the grub prompt, fixed grub, and rebooted to write this post.

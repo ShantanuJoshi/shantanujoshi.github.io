@@ -54,8 +54,8 @@ Installing the kit with or without mods first requires complete removal of the o
 <ul>
 <li>Keep careful track of all the screws, you'll need them in the future </li>
 <li>Try to find a dremel tool, if you don't have one it's a perfect opportunity to pick one up, I'll specify the attachment bits used in each step</li>
-<li>If you're afraid or unsure of removing the GPU cooler from the PCB I recommend watching this video detailing the teardown of the Titan X: https://www.youtube.com/watch?v=H7HN3CDxMQk</li>
-<li>You must ground yourself somehow while doing this. Here's a link as to why it's necessary: http://www.tomshardware.com/faq/id-2121341/ground-building-computer.html</li>
+<li>If you're afraid or unsure of removing the GPU cooler from the PCB I recommend watching this <a href="https://www.youtube.com/watch?v=H7HN3CDxMQk">video</a> detailing the teardown of the Titan X</li>
+<li>You must ground yourself somehow while doing this. Click <a href="https://www.tomshardware.com/faq/id-2121341/ground-building-computer.html">here</a> to learn why it's necessary</li>
 </ul>
 
  
