@@ -33,7 +33,7 @@ As a result the only solution to better performance and temperatures is water co
 
  
 
-EVGA (an AIB that releases custom loops) does not have a water cooling kit for the new Titan X. The only option is to modify a water cooling kit made for the Titan X's younger brother the GTX 1080.  
+EVGA (an AIB that releases custom hybrid kits) does not have a water cooling kit for the new Titan X. The only option is to modify a water cooling kit made for the Titan X's younger sibling the GTX 1080.  
 
  
 
@@ -56,6 +56,7 @@ Installing the kit with or without mods first requires complete removal of the o
 <li>Try to find a dremel tool, if you don't have one it's a perfect opportunity to pick one up, I'll specify the attachment bits used in each step</li>
 <li>If you're afraid or unsure of removing the GPU cooler from the PCB I recommend watching this <a href="https://www.youtube.com/watch?v=H7HN3CDxMQk">video</a> detailing the teardown of the Titan X</li>
 <li>You must ground yourself somehow while doing this. Click <a href="https://www.tomshardware.com/faq/id-2121341/ground-building-computer.html">here</a> to learn why it's necessary</li>
+<li> This <a href="http://forums.evga.com/10801070-Reference-Hybrid-AIO-Kit-Install-Manual-for-PN-400HY5188B1-nonFTW-m2515115.aspx">link</a> has instructions from EVGA on installing the cooler on a 1080. Save them you'll need this later on.</li>
 </ul>
 
  
@@ -170,12 +171,23 @@ Here are my results:
 <h2>Step 7: Grinding a Space for the Capacitors</h2> 
 This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following [bit](https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541). It's included in most sets and makes it very easy to grind the surface away.
 
-{% include image.html
-            img="assets/images/TitanXPMod/10.JPG"
-            title="Side View of Dremel Cut"
-            caption="Plenty of Space for the Capacitors" %}
 
 {% include image.html
             img="assets/images/TitanXPMod/11.JPG"
             title="Slightly Zoomed Out"
             caption="Slight Collateral Dremel Damage on the Sides" %}
+
+{% include image.html
+            img="assets/images/TitanXPMod/10.JPG"
+            title="Side View of Dremel Cut"
+            caption="Plenty of Space for the Capacitors" %}
+
+
+<h2> Step 8: Reassembly</h2>
+The steps here on are the exact same as the tutorial from EVGA. The top plate that we grinded and the water cooler should easily attach to the pcb. Again follow this <a href="http://forums.evga.com/10801070-Reference-Hybrid-AIO-Kit-Install-Manual-for-PN-400HY5188B1-nonFTW-m2515115.aspx">link</a> for details on reassembly.
+
+<h2> Step 9: Final Product!</h2>
+See any pictures online of any hybrid card. The only thing differentiating this is that the PCB is low key a Titan :wink:
+
+<h2> Temps/Results </h2>
+This card on water is absoultely insane. Detailed benchmark on the way...

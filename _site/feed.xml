@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-14T16:18:36-04:00</updated>
+<updated>2016-09-14T16:59:59-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>Shantanu&#39;s blog</subtitle>
@@ -211,7 +211,7 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 
 &lt;p&gt;As a result the only solution to better performance and temperatures is water cooling. There is a large community of PC enthusiasts that build custom water cooling loops for their systems. Unfortunately custom loops are expensive and cumbersome. In addition they tend to make upgrading quite difficult. The next solution to water cooling a graphics card is a “hybrid-kit”. Basically an all in one water cooler that attaches to the GPU PCB and creates a water cooling loop.&lt;/p&gt;
 
-&lt;p&gt;EVGA (an AIB that releases custom loops) does not have a water cooling kit for the new Titan X. The only option is to modify a water cooling kit made for the Titan X’s younger brother the GTX 1080.&lt;/p&gt;
+&lt;p&gt;EVGA (an AIB that releases custom hybrid kits) does not have a water cooling kit for the new Titan X. The only option is to modify a water cooling kit made for the Titan X’s younger sibling the GTX 1080.&lt;/p&gt;
 
 &lt;p&gt;{% include image.html
         	img=”assets/images/TitanXPMod/2.JPG”
@@ -230,6 +230,7 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 &lt;li&gt;Try to find a dremel tool, if you don&#39;t have one it&#39;s a perfect opportunity to pick one up, I&#39;ll specify the attachment bits used in each step&lt;/li&gt;
 &lt;li&gt;If you&#39;re afraid or unsure of removing the GPU cooler from the PCB I recommend watching this &lt;a href=&quot;https://www.youtube.com/watch?v=H7HN3CDxMQk&quot;&gt;video&lt;/a&gt; detailing the teardown of the Titan X&lt;/li&gt;
 &lt;li&gt;You must ground yourself somehow while doing this. Click &lt;a href=&quot;https://www.tomshardware.com/faq/id-2121341/ground-building-computer.html&quot;&gt;here&lt;/a&gt; to learn why it&#39;s necessary&lt;/li&gt;
+&lt;li&gt; This &lt;a href=&quot;http://forums.evga.com/10801070-Reference-Hybrid-AIO-Kit-Install-Manual-for-PN-400HY5188B1-nonFTW-m2515115.aspx&quot;&gt;link&lt;/a&gt; has instructions from EVGA on installing the cooler on a 1080. Save them you&#39;ll need this later on.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Step 1: Remove the IO Plate&lt;/h2&gt;
@@ -323,14 +324,23 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 &lt;p&gt;This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following &lt;a href=&quot;https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541&quot;&gt;bit&lt;/a&gt;. It’s included in most sets and makes it very easy to grind the surface away.&lt;/p&gt;
 
 &lt;p&gt;{% include image.html
+            img=”assets/images/TitanXPMod/11.JPG”
+            title=”Slightly Zoomed Out”
+            caption=”Slight Collateral Dremel Damage on the Sides” %}&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
             img=”assets/images/TitanXPMod/10.JPG”
             title=”Side View of Dremel Cut”
             caption=”Plenty of Space for the Capacitors” %}&lt;/p&gt;
 
-&lt;p&gt;{% include image.html
-            img=”assets/images/TitanXPMod/11.JPG”
-            title=”Slightly Zoomed Out”
-            caption=”Slight Collateral Dremel Damage on the Sides” %}&lt;/p&gt;
+&lt;h2&gt; Step 8: Reassembly&lt;/h2&gt;
+&lt;p&gt;The steps here on are the exact same as the tutorial from EVGA. The top plate that we grinded and the water cooler should easily attach to the pcb. Again follow this &lt;a href=&quot;http://forums.evga.com/10801070-Reference-Hybrid-AIO-Kit-Install-Manual-for-PN-400HY5188B1-nonFTW-m2515115.aspx&quot;&gt;link&lt;/a&gt; for details on reassembly.&lt;/p&gt;
+
+&lt;h2&gt; Step 9: Final Product!&lt;/h2&gt;
+&lt;p&gt;See any pictures online of any hybrid card. The only thing differentiating this is that the PCB is low key a Titan &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt; Temps/Results &lt;/h2&gt;
+&lt;p&gt;This card on water is absoultely insane. Detailed benchmark on the way…&lt;/p&gt;
 </content>
 <author>
 <name>shantanujoshi</name>
