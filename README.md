@@ -4,7 +4,7 @@
 
 <p align="center"> <strike>I hate web stuff</strike> Webstuff isn't THAT bad</p>
 
-<a href="https://shantanujoshi.github.io/">Click Here!</a>
+<p align="center"> <a href="https://shantanujoshi.github.io/">Click Here!</a></p>
 
 ---
 
