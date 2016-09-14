@@ -13,7 +13,7 @@ def compressMe(file, verbose=False):
 	
 	#set quality= to the preferred quality. 
 	#I found that 85 has no difference in my 6-10mb files and that 65 is the lowest reasonable number
-	picture.save("Compressed_"+file,"JPEG",optimize=True,quality=85) 
+	picture.save("Compressed_"+file,"JPEG",optimize=True,quality=65) 
 	
 	newsize = os.stat(os.path.join(os.getcwd(),"Compressed_"+file)).st_size
 	percent = (oldsize-newsize)/float(oldsize)*100

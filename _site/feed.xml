@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-14T15:24:27-04:00</updated>
+<updated>2016-09-14T16:18:36-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>Shantanu&#39;s blog</subtitle>
@@ -320,8 +320,17 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
             caption=”Wider View of the Cut for Scale” %}&lt;/p&gt;
 
 &lt;h2&gt;Step 7: Grinding a Space for the Capacitors&lt;/h2&gt;
+&lt;p&gt;This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following &lt;a href=&quot;https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541&quot;&gt;bit&lt;/a&gt;. It’s included in most sets and makes it very easy to grind the surface away.&lt;/p&gt;
 
-&lt;p&gt;My images were somehow lost from the camera. Will have to retake and upload the rest. Stay tuned…&lt;/p&gt;
+&lt;p&gt;{% include image.html
+            img=”assets/images/TitanXPMod/10.JPG”
+            title=”Side View of Dremel Cut”
+            caption=”Plenty of Space for the Capacitors” %}&lt;/p&gt;
+
+&lt;p&gt;{% include image.html
+            img=”assets/images/TitanXPMod/11.JPG”
+            title=”Slightly Zoomed Out”
+            caption=”Slight Collateral Dremel Damage on the Sides” %}&lt;/p&gt;
 </content>
 <author>
 <name>shantanujoshi</name>

@@ -168,5 +168,14 @@ Here are my results:
  
 
 <h2>Step 7: Grinding a Space for the Capacitors</h2> 
+This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following [bit](https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541). It's included in most sets and makes it very easy to grind the surface away.
 
-My images were somehow lost from the camera. Will have to retake and upload the rest. Stay tuned...
+{% include image.html
+            img="assets/images/TitanXPMod/10.JPG"
+            title="Side View of Dremel Cut"
+            caption="Plenty of Space for the Capacitors" %}
+
+{% include image.html
+            img="assets/images/TitanXPMod/11.JPG"
+            title="Slightly Zoomed Out"
+            caption="Slight Collateral Dremel Damage on the Sides" %}
