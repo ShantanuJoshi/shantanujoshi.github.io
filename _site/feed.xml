@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-14T16:59:59-04:00</updated>
+<updated>2016-09-14T17:12:00-04:00</updated>
 <id>http://localhost:3000/</id>
 <title>Shantanu Joshi</title>
 <subtitle>Shantanu&#39;s blog</subtitle>
@@ -322,6 +322,8 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 
 &lt;h2&gt;Step 7: Grinding a Space for the Capacitors&lt;/h2&gt;
 &lt;p&gt;This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following &lt;a href=&quot;https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541&quot;&gt;bit&lt;/a&gt;. It’s included in most sets and makes it very easy to grind the surface away.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span class=&quot;evidence&quot;&gt;Note: Definitely test fit the plate to see if it’s flush with the PCB and keep repeating Step 5-7 until it’s flush.&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;{% include image.html
             img=”assets/images/TitanXPMod/11.JPG”

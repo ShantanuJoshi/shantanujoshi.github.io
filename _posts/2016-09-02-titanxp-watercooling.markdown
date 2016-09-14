@@ -169,7 +169,9 @@ Here are my results:
  
 
 <h2>Step 7: Grinding a Space for the Capacitors</h2> 
-This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following [bit](https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541). It's included in most sets and makes it very easy to grind the surface away.
+This is the aftermath of the panel after I grinded away the metal above the capacitors. I highly recommend using a dremel with the following [bit](https://www.dremel.com/en-us/Tools/Pages/ToolDetail.aspx?pid=541). It's included in most sets and makes it very easy to grind the surface away. 
+
+<strong><span class="evidence">Note: Definitely test fit the plate to see if it's flush with the PCB and keep repeating Step 5-7 until it's flush.</span></strong>
 
 
 {% include image.html
