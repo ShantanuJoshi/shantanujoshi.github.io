@@ -26,5 +26,3 @@ The first album is taken by me the other two are a couple other attendees. (clic
 <center>
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/QyKxG"><a href="//imgur.com/QyKxG">Mechanicahl Keyboards NYC Meetup</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </center>
-And view from the afterparty for those that stayed:
-![rooftop](https://i.imgur.com/b3DOnoW.jpg)
