@@ -6,6 +6,8 @@
 
 <p align="center"> <a href="https://shantanujoshi.github.io/">Click Here!</a></p>
 
+P.S. Working on a new all JS website because ruby and jekyll are gross. It's in progress...
+
 ---
 
 © Shantanu Joshi
