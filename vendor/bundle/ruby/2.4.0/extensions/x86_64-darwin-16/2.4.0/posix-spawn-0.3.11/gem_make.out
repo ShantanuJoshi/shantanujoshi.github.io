@@ -1,0 +1,15 @@
+current directory: /Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.11/ext
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20170611-43418-14yybvq.rb extconf.rb
+creating Makefile
+
+current directory: /Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.11/ext
+make "DESTDIR=" clean
+
+current directory: /Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.11/ext
+make "DESTDIR="
+compiling posix-spawn.c
+linking shared-object posix_spawn_ext.bundle
+
+current directory: /Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.11/ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 posix_spawn_ext.bundle ./.gem.20170611-43418-wisq6l

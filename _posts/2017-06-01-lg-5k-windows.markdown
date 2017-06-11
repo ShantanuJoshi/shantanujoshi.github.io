@@ -1,5 +1,5 @@
 ---
-title: "Running the LG Ultrafine 5k @ Full Resolution with Windows 10"
+title: "Running the LG Ultrafine 5k on Windows 10 & Linux"
 layout: post
 date: 2017-06-01 08:32
 tag:

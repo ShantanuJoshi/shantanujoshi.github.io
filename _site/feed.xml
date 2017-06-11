@@ -1,19 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
-<link href="http://localhost:3000/feed.xml" rel="self" type="application/atom+xml" />
-<link href="http://localhost:3000/" rel="alternate" type="text/html" />
-<updated>2016-09-14T17:22:29-04:00</updated>
-<id>http://localhost:3000/</id>
+<link href="https://shantanujoshi.github.io/feed.xml" rel="self" type="application/atom+xml" />
+<link href="https://shantanujoshi.github.io/" rel="alternate" type="text/html" />
+<updated>2017-06-11T12:27:32-07:00</updated>
+<id>https://shantanujoshi.github.io/</id>
 <title>Shantanu Joshi</title>
 <subtitle>Shantanu&#39;s blog</subtitle>
 <entry>
+<title>Running the LG Ultrafine 5k on Windows 10 &amp;amp; Linux</title>
+<link href="https://shantanujoshi.github.io/lg-5k-windows/" rel="alternate" type="text/html" title="Running the LG Ultrafine 5k on Windows 10 &amp; Linux" />
+<published>2017-06-01T08:32:00-07:00</published>
+<updated>2017-06-01T08:32:00-07:00</updated>
+<id>https://shantanujoshi.github.io/lg-5k-windows</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/lg-5k-windows/">&lt;h2 id=&quot;heading2&quot;&gt; TL;DR&lt;/h2&gt;
+&lt;p&gt;You can drive the LG Ultrafine 5k in W10 using a Thunderbolt 3 AIC (AsRock one ATM is the only one I tested) and a motherboard with the Thunderbolt 3 header on it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;When the LG Ultrafine 5k was launched it was explcitily “built for mac” where there was no indication of compatibility with Windows devices. In fact, after its release, Linus@Linus Tech Tips in a review explained that Apple was using a special magical implementation of Thunderbolt 3 (TB3) where two displayport 1.4 signals were transmitted via the single TB3 cable making it impossible for non OSX devices with this implementation to use the 5k display at all. In fact after testing most people with TB3 laptops were only able to drive the display at 4K(4096x2160).&lt;/p&gt;
+
+&lt;h2 id=&quot;heading2&quot;&gt; WHO CARES BRUH JUST USE YOUR MACBOOK&lt;/h2&gt;
+&lt;p&gt;Is what most people would say, but its important to note that this 5k screen is far ahead of any other 5k screen in this space. It destroys the Dell 5k screen in price, color representation, and brightness. This translates to stellar performance on the productivity front. I was determined to get this goddamn display working with some flavor of linux, but step 1 was windows 10.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;After some research into the TB3 spec, various motherboard manufacturers, and random tech blogs I learned the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You can&#39;t just plug in a DisplayPort to Thunderbolt 3 cable to power this from amazon because they aren&#39;t bidirectional and only convert TB3 to DP&lt;/li&gt;
+&lt;li&gt;The dual signal DisplayPort is NOT an Apple specific innovation it&#39;s in the TB3 specification&lt;/li&gt;
+&lt;li&gt;TB3 can use up to 8 lanes of DisplayPort 1.2 where as a normal connection uses 4 &lt;/li&gt;
+&lt;li&gt;Most motherboard manufacturers providing onboard TB3 aren&#39;t even providing a single DisplayPort signal for integrated graphics&lt;/li&gt;
+&lt;li&gt;The only way to pass through the GPU output is to use an AIC (add in card) that can support the TB3 spec AND passthrough graphics&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;heading2&quot;&gt;Seems simple right?!&lt;/h2&gt;
+&lt;p&gt;Sure if you can find a mobo and AIC… which turned out to be quite difficult. After a few hours of searching I was only able to find ONE AIC that was supported: &lt;a href=&quot;https://www.newegg.com/Product/Product.aspx?Item=N82E16815548003&quot;&gt;AsRock Thunderbolt 3 AIC&lt;/a&gt; and amazingly in its &lt;a href=&quot;ftp://asrock.cn/Manual/Thunderbolt%203%20AIC.pdf&quot;&gt;manual&lt;/a&gt; it even explicitly states support for 5k@60hz&lt;/p&gt;
+
+&lt;p&gt;I HAD to test this so I went ahead and purchased (referencing the manual) a compatible Z270 board and the AIC. I went with the AsRock Z270 Extreme4 (since it was mATX) and the AsRock AIC from newegg.&lt;/p&gt;
+
+&lt;p&gt;After throwing in my 960 pro, a titan XP, a single dim, and a 6700k, I plugged in the AIC with a special thunderbolt cable that inserts into a header on the motherboard. My guess here is that while the TB3 card is attached via PCIe the chipset also probably communicates with the AIC in some way for bandwidth allocation which is why that extra TB3 header is needed. The AIC failed to work on a motherboard without the special TB3 header.&lt;/p&gt;
+
+&lt;p&gt;I booted this system into windows 10, installed a TB3 driver from the AsRock website, and shutdown the system. I decided to plug in both of the two included cables (DisplayPort to DisplayPort and DisplayPort to Mini-Displayport) into the AIC. The logic here is that the single DP cable is restricted to 4K and in order to push the dual signal through TB3 I’d obviously need to attach two cables from the GPU to the AIC.&lt;/p&gt;
+
+&lt;p&gt;I plugged everything in, booted the system, and BOOM FULL 5k RESOLUTION 60HZ NO TINKERING!&lt;/p&gt;
+
+&lt;p&gt;The whole system works seamleslly and I’ve had no issues so far. Getting the full 10bit color support and the colors look fantastic. The speakers are still not cooperating (although my macbook running W10 can drive them no problem). I’ve got a hefty overclock on the Titan XP and was able to run GTA V at 5k at an average of 65 frames.&lt;/p&gt;
+
+&lt;p&gt;After installing TB3 drivers for arch I’m able to get this to run on arch linux as well so that’s yuugeee. Gnome is pretty good at display scaling and I use Atom so both do well on the HiDPI screen. The TB3 driver is an intel driver so I think if your distro has Tb3 drivers floating around this may work. Shoot me an email if there’s a distro you want me to test I’d be happy to give it a shot.&lt;/p&gt;
+
+&lt;h2 id=&quot;heading2&quot;&gt; TL;DR&lt;/h2&gt;
+&lt;p&gt;You can drive the LG Ultrafine 5k in W10 using a Thunderbolt 3 AIC (AsRock one ATM is the only one I tested) and a motherboard with the Thunderbolt 3 header on it.&lt;/p&gt;
+</content>
+<author>
+<name>shantanujoshi</name>
+</author>
+<summary> TL;DRYou can drive the LG Ultrafine 5k in W10 using a Thunderbolt 3 AIC (AsRock one ATM is the only one I tested) and a motherboard with the Thunderbolt 3 header on it.</summary>
+</entry>
+<entry>
 <title>Booting into Linux from the Grub Prompt with an NVME Drive</title>
-<link href="http://localhost:3000/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting into Linux from the Grub Prompt with an NVME Drive" />
-<published>2016-09-09T00:15:00-04:00</published>
-<updated>2016-09-09T00:15:00-04:00</updated>
-<id>http://localhost:3000/grub-prompt-nvme</id>
-<content type="html" xml:base="http://localhost:3000/grub-prompt-nvme/">&lt;p&gt;For the first time since my foray into Linux 4/5 years ago, I ran into the dreaded grub prompt at boot.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/grub-prompt-nvme/" rel="alternate" type="text/html" title="Booting into Linux from the Grub Prompt with an NVME Drive" />
+<published>2016-09-09T00:15:00-07:00</published>
+<updated>2016-09-09T00:15:00-07:00</updated>
+<id>https://shantanujoshi.github.io/grub-prompt-nvme</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/grub-prompt-nvme/">&lt;p&gt;For the first time since my foray into Linux 4/5 years ago, I ran into the dreaded grub prompt at boot.&lt;/p&gt;
 
 &lt;p&gt;It looks a lot like this:
 &lt;img src=&quot;https://terminalinflection.com/wordpress/wp-content/uploads/2012/10/GRUB-Ubuntu.png&quot; /&gt;&lt;/p&gt;
@@ -63,11 +113,11 @@
 </entry>
 <entry>
 <title>Getting Pascal GPU’s to Work on Linux</title>
-<link href="http://localhost:3000/nvidiabuntu/" rel="alternate" type="text/html" title="Getting Pascal GPU&#39;s to Work on Linux" />
-<published>2016-09-04T21:08:00-04:00</published>
-<updated>2016-09-04T21:08:00-04:00</updated>
-<id>http://localhost:3000/nvidiabuntu</id>
-<content type="html" xml:base="http://localhost:3000/nvidiabuntu/">&lt;p&gt;I’ve been running ubuntu on computers with discrete GPU’s for a few years now. Not ONCE has it ever been easy. The problem is that the Ubuntu default Nouveau drivers require time to update compatibility, and Nvidia drivers hate working with/disabling Nouveau. Given my itch to have the latest and greatest laptop hardware for the past few years I’ve had to deal with hacking away at the kernel/nouveau and nvidia beta drivers to get linux running on my various devices. Compatibility is generally introduced in kernel updates a couple months after the release of new hardware, but ain’t nobody got time for that.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/nvidiabuntu/" rel="alternate" type="text/html" title="Getting Pascal GPU&#39;s to Work on Linux" />
+<published>2016-09-04T21:08:00-07:00</published>
+<updated>2016-09-04T21:08:00-07:00</updated>
+<id>https://shantanujoshi.github.io/nvidiabuntu</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/nvidiabuntu/">&lt;p&gt;I’ve been running ubuntu on computers with discrete GPU’s for a few years now. Not ONCE has it ever been easy. The problem is that the Ubuntu default Nouveau drivers require time to update compatibility, and Nvidia drivers hate working with/disabling Nouveau. Given my itch to have the latest and greatest laptop hardware for the past few years I’ve had to deal with hacking away at the kernel/nouveau and nvidia beta drivers to get linux running on my various devices. Compatibility is generally introduced in kernel updates a couple months after the release of new hardware, but ain’t nobody got time for that.&lt;/p&gt;
 
 &lt;p&gt;Around a month or so ago, after a friend at facebook gifted me an Oculus Rift; as a result I decided to build my own computer. I bought the new Nvidia GTX 1080 and a month later also purchased the new Pascal Titan X (or Titan XP, thanks linustechtips) and decided to dual boot Ubuntu 16.04 because I thought it’d be interesting to test CUDA benchmarks with the new GPU’s. I also failed to find anyone post anything about their success or even failure with trying to run the GPU’s on linux.&lt;/p&gt;
 
@@ -194,11 +244,11 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 </entry>
 <entry>
 <title>Modding an AIO Water Cooler for the Titan XP (Pascal)</title>
-<link href="http://localhost:3000/titanxp-watercooling/" rel="alternate" type="text/html" title="Modding an AIO Water Cooler for the Titan XP (Pascal)" />
-<published>2016-09-02T18:21:00-04:00</published>
-<updated>2016-09-02T18:21:00-04:00</updated>
-<id>http://localhost:3000/titanxp-watercooling</id>
-<content type="html" xml:base="http://localhost:3000/titanxp-watercooling/">&lt;p&gt;I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible idle and load temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. &lt;em&gt;Scroll down to skip to the tutorial&lt;/em&gt;&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/titanxp-watercooling/" rel="alternate" type="text/html" title="Modding an AIO Water Cooler for the Titan XP (Pascal)" />
+<published>2016-09-02T18:21:00-07:00</published>
+<updated>2016-09-02T18:21:00-07:00</updated>
+<id>https://shantanujoshi.github.io/titanxp-watercooling</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/titanxp-watercooling/">&lt;p&gt;I recently got my hands on a new Pascal Titan X, and while the performance of the card is phenomenal it has terrible idle and load temps. In this post I’ll describe my steps in modding a hybrid water cooling kit that’s fit for the GTX 1080 to work with the new Titan X. &lt;em&gt;Scroll down to skip to the tutorial&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;{% include image.html
         	img=”assets/images/TitanXPMod/1.JPG”
@@ -352,11 +402,11 @@ Dell XPS 15 9550, Surface Book w. DGPU (both of these needed additional tweaks t
 </entry>
 <entry>
 <title>Benchmarking the Sieve of Eratosthenes</title>
-<link href="http://localhost:3000/soe/" rel="alternate" type="text/html" title="Benchmarking the Sieve of Eratosthenes" />
-<published>2016-08-19T05:21:00-04:00</published>
-<updated>2016-08-19T05:21:00-04:00</updated>
-<id>http://localhost:3000/soe</id>
-<content type="html" xml:base="http://localhost:3000/soe/">&lt;p&gt;Advanced concepts in computer science can sometimes be difficult to understand and difficult to execute. A great example of this is tail recurison in functional programming. The conept is easy to explain, and the notion of it running in constant stack space is easy to accept. However building programs and algorithms to be tail recursive can be a difficult task that isn’t very easy to teach. In a similar fashion explaining Floydd Warshall’s, in my opinion, is much harder than writing the simple program that implements it.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/soe/" rel="alternate" type="text/html" title="Benchmarking the Sieve of Eratosthenes" />
+<published>2016-08-19T05:21:00-07:00</published>
+<updated>2016-08-19T05:21:00-07:00</updated>
+<id>https://shantanujoshi.github.io/soe</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/soe/">&lt;p&gt;Advanced concepts in computer science can sometimes be difficult to understand and difficult to execute. A great example of this is tail recurison in functional programming. The conept is easy to explain, and the notion of it running in constant stack space is easy to accept. However building programs and algorithms to be tail recursive can be a difficult task that isn’t very easy to teach. In a similar fashion explaining Floydd Warshall’s, in my opinion, is much harder than writing the simple program that implements it.&lt;/p&gt;
 
 &lt;p&gt;Learning the Sieve or Eratosthenes, an anchient and intuitive algorithm that generates prime numbers, reminded me of my first time learning about summing up numbers with for-loops in an intro Java class in high school. I felt this extreme sense of confidence and comfort with programming that began fading away after my first college lab assignment in C. The &lt;span style=&quot;color:#1abc9c&quot;&gt;SOE&lt;/span&gt; just clicks in a way not many &lt;em&gt;“advanced”&lt;/em&gt; concepts do in CS. (Yes I’m abbreviating Sieve of Eratosthenes to save 21 characters you’re welcome).&lt;/p&gt;
 
@@ -434,11 +484,11 @@ This is not a guide to parallelizing code, If you&#39;re interested in learning 
 </entry>
 <entry>
 <title>Compresssing Images in Python</title>
-<link href="http://localhost:3000/python-image-compression/" rel="alternate" type="text/html" title="Compresssing Images in Python" />
-<published>2016-07-31T15:08:00-04:00</published>
-<updated>2016-07-31T15:08:00-04:00</updated>
-<id>http://localhost:3000/python-image-compression</id>
-<content type="html" xml:base="http://localhost:3000/python-image-compression/">&lt;p&gt;While working on website performance tuning for some part time work I needed to find a way to compress 100,000+ images for an ecommerce website’s catalog. The current solution to image compression was a “designer” who would bulk process images in photoshop with a macro. He had worked for 4 days straight and estimated a 2 week completion time for processing all the pictures.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/python-image-compression/" rel="alternate" type="text/html" title="Compresssing Images in Python" />
+<published>2016-07-31T15:08:00-07:00</published>
+<updated>2016-07-31T15:08:00-07:00</updated>
+<id>https://shantanujoshi.github.io/python-image-compression</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/python-image-compression/">&lt;p&gt;While working on website performance tuning for some part time work I needed to find a way to compress 100,000+ images for an ecommerce website’s catalog. The current solution to image compression was a “designer” who would bulk process images in photoshop with a macro. He had worked for 4 days straight and estimated a 2 week completion time for processing all the pictures.&lt;/p&gt;
 
 &lt;p&gt;The images were simply too large in file size and the wrong dimensions. Each image had to be both scaled to fit within fixed square pixel dimensions and reduced in file size.&lt;/p&gt;
 
@@ -460,11 +510,11 @@ This is not a guide to parallelizing code, If you&#39;re interested in learning 
 </entry>
 <entry>
 <title>Salvaging a Broken Lenovo Yoga 900</title>
-<link href="http://localhost:3000/lenovo-yoga-screen-repair/" rel="alternate" type="text/html" title="Salvaging a Broken Lenovo Yoga 900" />
-<published>2016-07-06T14:24:00-04:00</published>
-<updated>2016-07-06T14:24:00-04:00</updated>
-<id>http://localhost:3000/lenovo-yoga-screen-repair</id>
-<content type="html" xml:base="http://localhost:3000/lenovo-yoga-screen-repair/">&lt;p&gt;Due to various random circumstances I was given a Lenovo Yoga 900 with a shattered screen for free, the laptop is worth around $1200 new, but this guy had a broken screen and no charger. After getting a replacement charger and booting the computer I learned that it had an i7 processor and 16 gigs of ram and a high resolution display &lt;img class=&quot;emoji&quot; title=&quot;:flushed:&quot; alt=&quot;:flushed:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f633.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;. I decided to find a replacement screen on ebay for $300 and try to fix the laptop myself. Given that this was when the laptop just launcheed I had no reference or teardowns and no one seemed to have taken apart the display assembly but here’s my attempt to replace the screen.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/lenovo-yoga-screen-repair/" rel="alternate" type="text/html" title="Salvaging a Broken Lenovo Yoga 900" />
+<published>2016-07-06T14:24:00-07:00</published>
+<updated>2016-07-06T14:24:00-07:00</updated>
+<id>https://shantanujoshi.github.io/lenovo-yoga-screen-repair</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/lenovo-yoga-screen-repair/">&lt;p&gt;Due to various random circumstances I was given a Lenovo Yoga 900 with a shattered screen for free, the laptop is worth around $1200 new, but this guy had a broken screen and no charger. After getting a replacement charger and booting the computer I learned that it had an i7 processor and 16 gigs of ram and a high resolution display &lt;img class=&quot;emoji&quot; title=&quot;:flushed:&quot; alt=&quot;:flushed:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f633.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;. I decided to find a replacement screen on ebay for $300 and try to fix the laptop myself. Given that this was when the laptop just launcheed I had no reference or teardowns and no one seemed to have taken apart the display assembly but here’s my attempt to replace the screen.&lt;/p&gt;
 
 &lt;h2&gt; Removing the Old Panel&lt;/h2&gt;
 
@@ -525,11 +575,11 @@ This is not a guide to parallelizing code, If you&#39;re interested in learning 
 </entry>
 <entry>
 <title>NYC Mechanical Keyboard Meetup</title>
-<link href="http://localhost:3000/nyc-keyboard-meetup/" rel="alternate" type="text/html" title="NYC Mechanical Keyboard Meetup" />
-<published>2016-05-26T12:12:00-04:00</published>
-<updated>2016-05-26T12:12:00-04:00</updated>
-<id>http://localhost:3000/nyc-keyboard-meetup</id>
-<content type="html" xml:base="http://localhost:3000/nyc-keyboard-meetup/">&lt;p&gt;I recently hosted a mechanical keyboard meetup in NYC for keyboard enthusiasts and those wanting to learn about the hobby. The details of the meetup were posted on reddit and in our meetup group &lt;a href=&quot;https://www.meetup.com/Click-clack-Mechanical-Keyboard/events/230786767/&quot;&gt;here&lt;/a&gt;. I was incredibly surprised to find out that nearly 50 people heard about the meetup and attended. We even had Steph and Pete from &lt;a href=&quot;1upkeyboards.com&quot;&gt;1upkeyboards&lt;/a&gt; stop by to showcase some of their custom cables.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/nyc-keyboard-meetup/" rel="alternate" type="text/html" title="NYC Mechanical Keyboard Meetup" />
+<published>2016-05-26T12:12:00-07:00</published>
+<updated>2016-05-26T12:12:00-07:00</updated>
+<id>https://shantanujoshi.github.io/nyc-keyboard-meetup</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/nyc-keyboard-meetup/">&lt;p&gt;I recently hosted a mechanical keyboard meetup in NYC for keyboard enthusiasts and those wanting to learn about the hobby. The details of the meetup were posted on reddit and in our meetup group &lt;a href=&quot;https://www.meetup.com/Click-clack-Mechanical-Keyboard/events/230786767/&quot;&gt;here&lt;/a&gt;. I was incredibly surprised to find out that nearly 50 people heard about the meetup and attended. We even had Steph and Pete from &lt;a href=&quot;1upkeyboards.com&quot;&gt;1upkeyboards&lt;/a&gt; stop by to showcase some of their custom cables.&lt;/p&gt;
 
 &lt;p&gt;If you’re curious about keyboards I recommend checking out the &lt;a href=&quot;reddit.com/r/mechanicalkeyboards&quot;&gt;subreddit&lt;/a&gt; and perhaps even the &lt;a href=&quot;geekhack.org&quot;&gt;geekhack forums&lt;/a&gt;.&lt;/p&gt;
 
@@ -551,11 +601,11 @@ This is not a guide to parallelizing code, If you&#39;re interested in learning 
 </entry>
 <entry>
 <title>Doge</title>
-<link href="http://localhost:3000/doge/" rel="alternate" type="text/html" title="Doge" />
-<published>2016-01-23T22:10:00-05:00</published>
-<updated>2016-01-23T22:10:00-05:00</updated>
-<id>http://localhost:3000/doge</id>
-<content type="html" xml:base="http://localhost:3000/doge/">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/sx44AEd.jpg&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/doge/" rel="alternate" type="text/html" title="Doge" />
+<published>2016-01-23T22:10:00-08:00</published>
+<updated>2016-01-23T22:10:00-08:00</updated>
+<id>https://shantanujoshi.github.io/doge</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/doge/">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/sx44AEd.jpg&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
 </content>
 <author>
 <name>shantanujoshi</name>
@@ -565,11 +615,11 @@ This is not a guide to parallelizing code, If you&#39;re interested in learning 
 </entry>
 <entry>
 <title>First Post Readme</title>
-<link href="http://localhost:3000/first-post-readme/" rel="alternate" type="text/html" title="First Post Readme" />
-<published>2016-01-01T00:00:00-05:00</published>
-<updated>2016-01-01T00:00:00-05:00</updated>
-<id>http://localhost:3000/first-post-readme</id>
-<content type="html" xml:base="http://localhost:3000/first-post-readme/">&lt;p&gt;This is my blog, website, braindump.&lt;/p&gt;
+<link href="https://shantanujoshi.github.io/first-post-readme/" rel="alternate" type="text/html" title="First Post Readme" />
+<published>2016-01-01T00:00:00-08:00</published>
+<updated>2016-01-01T00:00:00-08:00</updated>
+<id>https://shantanujoshi.github.io/first-post-readme</id>
+<content type="html" xml:base="https://shantanujoshi.github.io/first-post-readme/">&lt;p&gt;This is my blog, website, braindump.&lt;/p&gt;
 
 &lt;p&gt;I post projects here. And stuff I’ve built. And stuff I want to share with people because I still can’t figure out twitter &lt;img class=&quot;emoji&quot; title=&quot;:unamused:&quot; alt=&quot;:unamused:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f612.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 </content>
