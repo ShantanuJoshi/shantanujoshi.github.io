@@ -1,0 +1,268 @@
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
+Making all in libxslt
+  CC     attrvt.lo
+  CC     xslt.lo
+  CC     xsltlocale.lo
+xsltlocale.c:210:1: warning: unused function 'xsltDefaultRegion' [-Wunused-function]
+xsltDefaultRegion(const xmlChar *localeName) {
+^
+1 warning generated.
+xsltlocale.c:210:1: warning: unused function 'xsltDefaultRegion' [-Wunused-function]
+xsltDefaultRegion(const xmlChar *localeName) {
+^
+1 warning generated.
+  CC     xsltutils.lo
+  CC     pattern.lo
+  CC     templates.lo
+  CC     variables.lo
+  CC     keys.lo
+  CC     numbers.lo
+  CC     extensions.lo
+  CC     extra.lo
+  CC     functions.lo
+  CC     namespaces.lo
+  CC     imports.lo
+  CC     attributes.lo
+  CC     documents.lo
+  CC     preproc.lo
+  CC     transform.lo
+  CC     security.lo
+  CCLD   libxslt.la
+Making all in libexslt
+  CC     exslt.lo
+  CC     common.lo
+  CC     crypto.lo
+  CC     math.lo
+  CC     sets.lo
+  CC     functions.lo
+  CC     strings.lo
+  CC     date.lo
+  CC     saxon.lo
+  CC     dynamic.lo
+  CCLD   libexslt.la
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: for architecture: x86_64 file: .libs/libexslt.a(crypto.o) has no symbols
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: for architecture: i386 file: .libs/libexslt.a(crypto.o) has no symbols
+Making all in xsltproc
+  CC     xsltproc.o
+  CCLD   xsltproc
+  CC     testThreads.o
+  CCLD   testThreads
+Making all in doc
+I/O error : Attempt to load network entity http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd
+./xsltproc.xml:8: warning: failed to load external entity "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"
+]>
+  ^
+I/O error : Attempt to load network entity http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
+warning: failed to load external entity "http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl"
+error
+xsltParseStylesheetFile : cannot parse http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
+compilation error: file ./xsltproc.xml line 10 element refentry
+xsltParseStylesheetProcess : document is not a stylesheet
+make[2]: [xsltproc.1] Error 5 (ignored)
+Rebuilding the HTML Web pages from xslt.html
+Validating the HTML Web pages
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+API.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+API.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+bugs.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+bugs.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+contribs.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+contribs.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+FAQ.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+FAQ.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+docs.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+docs.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+downloads.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+downloads.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+help.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+help.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+index.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+index.html:6: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+intro.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+intro.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+news.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+news.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+xsltproc2.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+xsltproc2.html:3: validity error : Validation failed: no DTD found !
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+                                          ^
+make[2]: [API.html] Error 4 (ignored)
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+./news.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+I/O error : Attempt to load network entity http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+news.html:2: warning: failed to load external entity "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+ 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+                                                                               ^
+Making all in tests
+Making all in docs
+ cd ../.. && /bin/sh /Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ext/nokogiri/tmp/x86_64-apple-darwin16/ports/libxslt/1.1.28/libxslt-1.1.28/missing --run automake-1.11 --gnu tests/docs/Makefile
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ext/nokogiri/tmp/x86_64-apple-darwin16/ports/libxslt/1.1.28/libxslt-1.1.28/missing: line 52: automake-1.11: command not found
+WARNING: `automake-1.11' is missing on your system.  You should only need it if
+         you modified `Makefile.am', `acinclude.m4' or `configure.in'.
+         You might want to install the `Automake' and `Perl' packages.
+         Grab them from any GNU archive site.
+ cd ../.. && /bin/sh ./config.status tests/docs/Makefile 
+config.status: creating tests/docs/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in REC1
+ cd ../.. && /bin/sh ./config.status tests/REC1/Makefile 
+config.status: creating tests/REC1/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in REC2
+ cd ../.. && /bin/sh ./config.status tests/REC2/Makefile 
+config.status: creating tests/REC2/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in REC
+ cd ../.. && /bin/sh ./config.status tests/REC/Makefile 
+config.status: creating tests/REC/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in general
+ cd ../.. && /bin/sh ./config.status tests/general/Makefile 
+config.status: creating tests/general/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in namespaces
+ cd ../.. && /bin/sh ./config.status tests/namespaces/Makefile 
+config.status: creating tests/namespaces/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in keys
+ cd ../.. && /bin/sh ./config.status tests/keys/Makefile 
+config.status: creating tests/keys/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in numbers
+ cd ../.. && /bin/sh ./config.status tests/numbers/Makefile 
+config.status: creating tests/numbers/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in documents
+ cd ../.. && /bin/sh ./config.status tests/documents/Makefile 
+config.status: creating tests/documents/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in extensions
+ cd ../.. && /bin/sh ./config.status tests/extensions/Makefile 
+config.status: creating tests/extensions/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in reports
+ cd ../.. && /bin/sh ./config.status tests/reports/Makefile 
+config.status: creating tests/reports/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in xmlspec
+ cd ../.. && /bin/sh ./config.status tests/xmlspec/Makefile 
+config.status: creating tests/xmlspec/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in multiple
+ cd ../.. && /bin/sh ./config.status tests/multiple/Makefile 
+config.status: creating tests/multiple/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in xinclude
+ cd ../.. && /bin/sh ./config.status tests/xinclude/Makefile 
+config.status: creating tests/xinclude/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in XSLTMark
+ cd ../.. && /bin/sh ./config.status tests/XSLTMark/Makefile 
+config.status: creating tests/XSLTMark/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in docbook
+ cd ../.. && /bin/sh ./config.status tests/docbook/Makefile 
+config.status: creating tests/docbook/Makefile
+make[3]: Nothing to be done for `all'.
+Making all in exslt
+ cd ../.. && /bin/sh ./config.status tests/exslt/Makefile 
+config.status: creating tests/exslt/Makefile
+Making all in common
+ cd ../../.. && /bin/sh ./config.status tests/exslt/common/Makefile 
+config.status: creating tests/exslt/common/Makefile
+make[4]: Nothing to be done for `all'.
+Making all in functions
+ cd ../../.. && /bin/sh ./config.status tests/exslt/functions/Makefile 
+config.status: creating tests/exslt/functions/Makefile
+make[4]: Nothing to be done for `all'.
+Making all in math
+ cd ../../.. && /bin/sh ./config.status tests/exslt/math/Makefile 
+config.status: creating tests/exslt/math/Makefile
+make[4]: Nothing to be done for `all'.
+Making all in sets
+ cd ../../.. && /bin/sh ./config.status tests/exslt/sets/Makefile 
+config.status: creating tests/exslt/sets/Makefile
+make[4]: Nothing to be done for `all'.
+Making all in strings
+ cd ../../.. && /bin/sh ./config.status tests/exslt/strings/Makefile 
+config.status: creating tests/exslt/strings/Makefile
+make[4]: Nothing to be done for `all'.
+Making all in dynamic
+ cd ../../.. && /bin/sh ./config.status tests/exslt/dynamic/Makefile 
+config.status: creating tests/exslt/dynamic/Makefile
+make[4]: Nothing to be done for `all'.
+Making all in date
+ cd ../../.. && /bin/sh ./config.status tests/exslt/date/Makefile 
+config.status: creating tests/exslt/date/Makefile
+make[4]: Nothing to be done for `all'.
+make[4]: Nothing to be done for `all-am'.
+Making all in plugins
+ cd ../.. && /bin/sh ./config.status tests/plugins/Makefile depfiles
+config.status: creating tests/plugins/Makefile
+config.status: executing depfiles commands
+make[3]: Nothing to be done for `all'.
+ cd .. && /bin/sh ./config.status tests/Makefile 
+config.status: creating tests/Makefile
+make[3]: Nothing to be done for `all-am'.
+ cd . && /bin/sh ./config.status Makefile 
+config.status: creating Makefile
+sed -e 's?\@XSLT_LIBDIR\@?-L/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ports/x86_64-apple-darwin16/libxslt/1.1.28/lib?g' \
+	    -e 's?\@XSLT_INCLUDEDIR\@?-I/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ports/x86_64-apple-darwin16/libxslt/1.1.28/include?g' \
+	    -e 's?\@VERSION\@?1.1.28?g' \
+	    -e 's?\@XSLT_LIBS\@?-lxslt  -L/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ports/x86_64-apple-darwin16/libxml2/2.9.2/lib -lxml2 -lz -lpthread -liconv -lm  ?g' \
+	       < ./xsltConf.sh.in > xsltConf.tmp \
+	&& mv xsltConf.tmp xsltConf.sh

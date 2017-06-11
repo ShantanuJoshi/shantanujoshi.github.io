@@ -1,0 +1,17 @@
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0001-Adding-doc-update-related-to-1.1.28.patch:26: trailing whitespace.
+  
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0001-Adding-doc-update-related-to-1.1.28.patch:33: trailing whitespace.
+  
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0001-Adding-doc-update-related-to-1.1.28.patch:41: trailing whitespace.
+  
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0001-Adding-doc-update-related-to-1.1.28.patch:74: trailing whitespace.
+  
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0001-Adding-doc-update-related-to-1.1.28.patch:117: trailing whitespace.
+  
+warning: squelched 1 whitespace error
+warning: 6 lines add whitespace errors.
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0006-Fix-str-padding-to-work-with-UTF-8-strings.patch:115: new blank line at EOF.
++
+/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/patches/libxslt/0006-Fix-str-padding-to-work-with-UTF-8-strings.patch:161: new blank line at EOF.
++
+warning: 2 lines add whitespace errors.

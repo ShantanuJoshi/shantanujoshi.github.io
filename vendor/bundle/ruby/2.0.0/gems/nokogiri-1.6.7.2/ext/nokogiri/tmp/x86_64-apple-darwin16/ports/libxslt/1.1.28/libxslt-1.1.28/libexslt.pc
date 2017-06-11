@@ -1,0 +1,12 @@
+prefix=/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ports/x86_64-apple-darwin16/libxslt/1.1.28
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+
+Name: libexslt
+Version: 0.8.17
+Description: EXSLT Extension library
+Requires: libxml-2.0
+Libs: -L${libdir} -lexslt -lxslt  -L/Users/shantanujoshi/Documents/shantanujoshi.github.io/vendor/bundle/ruby/2.0.0/gems/nokogiri-1.6.7.2/ports/x86_64-apple-darwin16/libxml2/2.9.2/lib -lxml2 -lz -lpthread -liconv -lm  
+Cflags: -I${includedir}
